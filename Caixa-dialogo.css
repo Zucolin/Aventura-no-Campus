@@ -1,0 +1,42 @@
+.mensagem {
+			position: fixed;
+			left: 50%;
+			bottom: 30px;
+			transform: translateX(-50%);
+			background:rgba(255, 255, 255, 0.85);
+			color: #4b4b4b;
+			padding: 8px 16px;
+			border: 7px solid rgba(173, 75, 75, 1);
+			
+			font-size: 3em;
+			min-width: 1300px;
+                min-height: 100px;
+				text-align: left;
+				z-index: 100;
+				display: flex;
+				align-items: center;
+				gap: 32px;
+				visibility: hidden;
+			}
+			.msg-avatar {
+				width: 130px;
+				height: 130px;
+		
+				object-fit: cover;
+				border: 3px solid #1eae60;
+				background: #fff;
+				flex-shrink: 0;
+			}
+			.msg-text {
+				display: block;
+				flex: 1;
+				text-align: left;
+			}
+			.mensagem.mostrar {
+				visibility: visible;
+				animation: fadeIn 0.3s;
+			}
+			@keyframes fadeIn {
+				from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+				to { opacity: 1; transform: translateX(-50%) translateY(0); }
+			}
