@@ -73,12 +73,12 @@ $_SESSION['fase1_ok'] = true;
 		
         
         
-        
-        
-        
-        
-        
         </style>
+
+
+
+
+
 </head>
 
 <body>
@@ -90,7 +90,7 @@ $_SESSION['fase1_ok'] = true;
 
 
 <div id="caixa-mensagem" class="mensagem">
-	<img src="img/renato.jpeg" alt="Personagem" class="msg-avatar">
+	<span class="msg-avatar"></span>
 	<span class="msg-text">RENATO: Preciso da sua ajuda, queremos jogar Handebol... Porém não sabemos direito as regras, pode nos informar?</span>
 </div>
 		

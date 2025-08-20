@@ -18,15 +18,7 @@
 				gap: 32px;
 				visibility: hidden;
 			}
-			.msg-avatar {
-				width: 130px;
-				height: 130px;
-		
-				object-fit: cover;
-				border: 3px solid #1eae60;
-				background: #fff;
-				flex-shrink: 0;
-			}
+			
 			.msg-text {
 				display: block;
 				flex: 1;
@@ -39,4 +31,31 @@
 			@keyframes fadeIn {
 				from { opacity: 0; transform: translateX(-50%) translateY(20px); }
 				to { opacity: 1; transform: translateX(-50%) translateY(0); }
+			}
+			
+			
+			
+			
+			.msg-avatar {
+				width: 130px;
+				height: 1300px;
+				border: 3px solid #1eae60;
+				background: #fff;
+				flex-shrink: 0;
+				background-image: url('img/renato.jpeg');
+				background-size: cover;
+				background-position: center;
+				display: inline-block;
+			}
+
+			.msg-avatar1 {
+				width: 130px;
+				height: 130px;
+				
+				
+				flex-shrink: 0;
+				background-image: url('img/claudio.png.png');
+				background-size: cover;
+				background-position: center;
+				
 			}
