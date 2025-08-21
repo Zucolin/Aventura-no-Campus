@@ -19,7 +19,9 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			font-family: Arial, sans-serif;
-		}
+            image-rendering: pixelated;
+        
+        }
         .personagem-claudio {
             position: absolute;
             top: 35%;

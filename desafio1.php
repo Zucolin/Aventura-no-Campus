@@ -38,6 +38,7 @@ $_SESSION['fase1_ok'] = true;
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
+			image-rendering: pixelated;
 		}
 		.personagem-renato {
 			position: absolute;
