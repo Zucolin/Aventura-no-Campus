@@ -4,11 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pontuação</title>
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="responsivo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
     :root{
@@ -138,7 +135,7 @@
     }
   </style>
 </head>
-<body>
+<body class="pagina-final">
   <div class="bg"></div>
 
   <main class="wrap">

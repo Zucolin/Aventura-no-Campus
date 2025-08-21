@@ -14,8 +14,10 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<link rel="stylesheet" href="Caixa-dialogo.css">
+	<link rel="stylesheet" href="responsivo.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Meu Site</title>
@@ -93,7 +95,7 @@
 
 </head>
 
-<body>
+<body class="pagina-desafio1">
 			
 	<button id="btn-personagem" class="personagem" style="background: none; border: none; padding: 0; cursor: pointer;">
     <img src="img/Renato.png" alt="Personagem" style="width: 70px; height: auto; display: block;">
@@ -101,7 +103,7 @@
 
 
 <button id="btn-personagem" class="personagem-vitor" style="background: none; border: none; padding: 0; cursor: pointer;">
-    <img src="img/vitor.png" alt="Personagem" style="width: 60px; height: auto; display: block;">
+    <img src="img/protagonista.png" alt="Personagem" style="width: 60px; height: auto; display: block;">
 </button>
 
 
@@ -113,7 +115,7 @@
 
 
 <div id="caixa-mensagem" class="mensagem">
-	<span class="msg-avatar"></span>
+	<span class="msg-avatar2"></span>
 	<span class="msg-text">RENATO: Preciso da sua ajuda, queremos jogar Handebol... Porém não sabemos direito as regras, pode nos informar?</span>
 </div>
 		
@@ -124,7 +126,7 @@
 	<button class="btn-escolha" id="btn-errado1">7 jogadores, pode usar pé, 3 segundos, 3 passos, drible duplo liberado, área 9m só goleiro, gol conta se tocar na trave, faltas apenas empurrar, punição só cartão amarelo, 2 tempos de 20min.</button>
 	<button class="btn-escolha" id="btn-errado2">7 jogadores, bola deve ser mordida, 10 segundos, 10 passos, drible com mãos e pés ao mesmo tempo, área 15m qualquer jogador pode entrar, punição inexistente, 2 tempos de 30min.</button>
 
-		<a id="btn-proxima-fase" href="fase2.php" target="_self" style="display:none; text-decoration:none;">
+		<a id="btn-proxima-fase" href="desafio2.php" target="_self" style="display:none; text-decoration:none;">
 			<button style="display:block; width: 70vw; max-width: 600px; margin: 40px auto 0 auto; padding: 32px 0; font-size: 2.2em; border-radius: 18px; border: none; background: #1eae60; color: #fff; cursor: pointer;">Ir para a próxima fase</button>
 		</a>
 	
