@@ -152,11 +152,12 @@
 	});
 		// Exemplo de uso: classificar botões como certo ou errado
 		document.getElementById('btn-certo').addEventListener('click', function() {
-			// Marca a fase 1 como concluída via PHP
-			fetch('set_fase1.php').then(() => {
-				alert('Resposta correta!');
-				document.getElementById('btn-proxima-fase').style.display = 'block';
-			});
+			fetch('set_fase1.php')
+        	.then(response => response.json())
+        	.then(data => {
+            alert(`Resposta correta! Você ganhou ${data.pontos_ganhos} pontos. Total: ${data.total}`);
+            document.getElementById('btn-proxima-fase').style.display = 'block';
+       		 });
 		});
 		document.getElementById('btn-errado1').addEventListener('click', function() {
 			alert('Resposta errada!');
@@ -165,14 +166,6 @@
 			alert('Resposta errada!');
 		});
 	</script>
-	<?php
-	
-	?>
-    
-    
-   
-
-
 
 
 

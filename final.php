@@ -1,3 +1,6 @@
+<?php
+require_once("set_fase1.php")
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -142,9 +145,9 @@
     <section class="card">
       <h1>Pontuação</h1>
       <div class="content">
-        <div class="score">12.340</div>
+        <div class="score"><?=$_SESSION['pontos']?></div>
         <p>
-          Sua pontuação foi de <strong>12.340</strong> pontos. Seu tempo foi de <strong>2:35</strong>!
+          Sua pontuação foi de <strong><?=$_SESSION['pontos']?></strong> pontos. Seu tempo foi de <strong><?=$tempo_decorrido?></strong>!
         </p>
       </div>
     </section>
