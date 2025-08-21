@@ -39,13 +39,28 @@ $_SESSION['fase1_ok'] = true;
 		}
 		.personagem {
 			position: absolute;
-			top: 50%;
-			left: 70%; 
+			top: 40%;
+			left: 65%; 
 			transform: translate(-50%, -50%);
 			width: 100px;
 			height: auto;
 		transition: transform 0.3s ease; 
         }
+		.personagem-vitor {
+			position: absolute;
+			top: 70%;
+			left: 75%; 
+			transform: translate(-50%, -50%);
+			width: 100px;
+			height: auto;
+		transition: transform 0.3s ease; 
+        }
+		
+		
+		
+		
+		
+		
 		.personagem:hover {
 			transform: translate(-50%, -50%) scale(1.2);
 		}
@@ -84,8 +99,19 @@ $_SESSION['fase1_ok'] = true;
 <body>
 			
 	<button id="btn-personagem" class="personagem" style="background: none; border: none; padding: 0; cursor: pointer;">
-    <img src="img/renato.jpeg" alt="Personagem" style="width: 100px; height: auto; display: block;">
+    <img src="img/Renato.png" alt="Personagem" style="width: 70px; height: auto; display: block;">
 </button>
+
+
+<button id="btn-personagem" class="personagem-vitor" style="background: none; border: none; padding: 0; cursor: pointer;">
+    <img src="img/vitor.png" alt="Personagem" style="width: 60px; height: auto; display: block;">
+</button>
+
+
+
+
+
+
 
 
 
