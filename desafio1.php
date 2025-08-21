@@ -1,10 +1,7 @@
 
 
 
-<?php
-session_start();
-$_SESSION['fase1_ok'] = true;
-?>
+
 
 
 
@@ -166,7 +163,9 @@ $_SESSION['fase1_ok'] = true;
 			alert('Resposta errada!');
 		});
 	</script>
+	<?php
 	
+	?>
     
     
    
