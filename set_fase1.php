@@ -35,4 +35,4 @@
 		"pontos_ganhos" => $pontos_ganhos,
 		"total" => $_SESSION['pontos']
 	]);
-?>/		
+?>	
