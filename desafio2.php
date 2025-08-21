@@ -18,4 +18,4 @@ if (!isset($_SESSION['fase1_ok']) || $_SESSION['fase1_ok'] !== true) {
 <body class="pagina-desafio2">
     <h1 style="color: #1eae60; font-size: 3em; text-align: center; margin-top: 20vh;">Passou de fase!</h1>
 </body>
-</html>
+</html>/** */
