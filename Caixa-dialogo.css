@@ -35,7 +35,7 @@
 			
 			
 			
-			
+			/*Renato*/
 			.msg-avatar {
 				width: 130px;
 				height: 130px;
@@ -47,15 +47,29 @@
 				background-position: center;
 				display: inline-block;
 			}
-
-			.msg-avatar1 {
+			/*Cláudio*/
+			.msg-avatar1{
 				width: 130px;
 				height: 130px;
 				
-				
+				background: #000000ad;
 				flex-shrink: 0;
-				background-image: url('img/claudio.png.png');
+				background-image: url('img/claudio.png');
 				background-size: cover;
 				background-position: center;
+				display: inline-block;
+				
+			}
+			/*Protagonista*/
+			.msg-avatar2{
+				width: 130px;
+				height: 130px;
+				
+				background: #000000ad;
+				flex-shrink: 0;
+				background-image: url('img/protagonista.png');
+				background-size: cover;
+				background-position: center;
+				display: inline-block;
 				
 			}

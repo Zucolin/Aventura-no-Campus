@@ -40,20 +40,6 @@
         .personagem:hover {
 			transform: translate(-50%, -50%) scale(1.2);
 		}
-
-        .mensagem {
-            position: fixed;
-            bottom: 90px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.85);
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 10px;
-            font-size: 30px;
-            display: none;
-            width: 1000px;
-        }
         .mensagem.mostrar {
             display: block;
         }
@@ -74,7 +60,7 @@
 <body>
     
     <button id="btn-personagem" class="personagem" style="background: none; border: none; padding: 0;">
-        <img src="img/claudio.png.png" alt="Personagem" style="width: 100px; height: auto; display: block;">
+        <img src="img/claudio.png" alt="Personagem" style="width: 100px; height: auto; display: block;">
     </button>
 
     <button id="btn-personagem2" class="personagem1" style="background: none; border: none; padding: 0;">
@@ -83,13 +69,15 @@
 
     <!-- Caixas de mensagem -->
     <div id="caixa-mensagem1" class="mensagem">
+        <span class="msg-avatar1"></span>
         CLAUDIO: Harammm te peguei inferior, mexendo no celular? Me entregue isso agora!!!
     </div>
 
     <div id="caixa-mensagem2" class="mensagem">
+        <span class="msg-avatar2"></span>
         VITOR: Calma, professor! Eu só estava vendo o horário da aula.
         <br>
-        <button id="btn-ok" class="btn-ok">OK</button>
+        <button id="btn-ok" class="btn-ok"><a href="desafio1.php">OK</a></button>
     </div>
 
     <script>
