@@ -134,3 +134,6 @@
     </script>
 </body>
 </html>
+<?php
+	$nivel=1;
+?>
