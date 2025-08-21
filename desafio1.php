@@ -39,7 +39,7 @@ $_SESSION['fase1_ok'] = true;
 			background-position: center;
 			background-repeat: no-repeat;
 		}
-		.personagem {
+		.personagem-renato {
 			position: absolute;
 			top: 40%;
 			left: 65%; 
@@ -58,25 +58,22 @@ $_SESSION['fase1_ok'] = true;
 		transition: transform 0.3s ease; 
         }
 		
-		
-		
-		
-		
-		
-		.personagem:hover {
+		.personagem-renato:hover {
 			transform: translate(-50%, -50%) scale(1.2);
 		}
         
 		
 			
 			
-			.btn-escolha {
+			
+		
+		.btn-escolha {
 			display: block;
 			width: 80vw;
 			max-width: 10000px;
 			margin: 20px auto;
 			padding: 24px 0;
-			font-size: 2em;
+			font-size: clamp  (0.2em, 8vw, 2.8em);
 			border-radius: 16px;
 			border: none;
 			color: #fff;
@@ -100,7 +97,7 @@ $_SESSION['fase1_ok'] = true;
 
 <body class="pagina-desafio1">
 			
-	<button id="btn-personagem" class="personagem" style="background: none; border: none; padding: 0; cursor: pointer;">
+	<button id="btn-personagem" class="personagem-renato" style="background: none; border: none; padding: 0; cursor: pointer;">
     <img src="img/Renato.png" alt="Personagem" style="width: 70px; height: auto; display: block;">
 </button>
 
@@ -118,7 +115,7 @@ $_SESSION['fase1_ok'] = true;
 
 
 <div id="caixa-mensagem" class="mensagem">
-	<span class="msg-avatar2"></span>
+	<span class="msg-avatar"></span>
 	<span class="msg-text">RENATO: Preciso da sua ajuda, queremos jogar Handebol... Porém não sabemos direito as regras, pode nos informar?</span>
 </div>
 		

@@ -7,7 +7,7 @@
 	color: #ffffff;
 	padding: 8px 16px;
 	font-size: 2.2em;
-	min-width: 320px;
+	min-width: 1220px;
 	max-width: 95vw;
 	width: auto;
 	min-height: 80px;
@@ -18,43 +18,39 @@
 	align-items: center;
 	gap: 24px;
 	visibility: hidden;
-	word-break: break-word;
-	border-radius: 18px;
-	box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+	
 }
 			
 .msg-text {
-	display: block;
-	flex: 1;
+	display: flex;
+	align-items: center;
 	text-align: left;
-	word-break: break-word;
-	overflow-wrap: break-word;
+	flex: 1;
 }
-			.mensagem.mostrar {
-				visibility: visible;
-				animation: fadeIn 0.3s;
+.mensagem.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
 			}
-			@keyframes fadeIn {
-							from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-							to { opacity: 1; transform: translateX(-50%) translateY(0); }
-						}
+			
+			
+			
+			
 
-			/* Responsividade para caixas de mensagem e avatares */
-@media (max-width: 900px) {
-	.mensagem {
-		font-size: 1.3em;
-		min-width: 0;
-		max-width: 98vw;
-		padding: 8px 2vw;
-		gap: 12px;
-	}
-	.msg-avatar, .msg-avatar1, .msg-avatar2 {
-		width: 60px;
-		height: 60px;
-	}
-}
 
-@media (max-width: 600px) {
+
+
+
+
+
+@keyframes fadeIn {
+		from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+		to { opacity: 1; transform: translateX(-50%) translateY(0); }
+	}
+
+		
+
+
+@media (max-width: 1200px) {
 	.mensagem {
 		font-size: 1em;
 		min-width: 0;
@@ -77,41 +73,44 @@
 			
 			
 			
-			/*Renato*/
+		/*Renato*/
 			.msg-avatar {
 				width: 130px;
 				height: 130px;
-				
 				background: #fcfcfc6c;
 				flex-shrink: 0;
-				background-image: url('img/renato.jpeg');
+				background-image: url('img/Renato.png');
 				background-size: cover;
 				background-position: center;
 				display: inline-block;
+				margin-left: 0;
+				margin-right: 24px;
 			}
-			/*Cláudio*/
+			
+		/*Cláudio*/
 			.msg-avatar1{
-				width: 130px;
+			    width: 130px;
 				height: 130px;
-				
-				background-color: #ffffff8f;
+				background: #fcfcfc6c;
 				flex-shrink: 0;
 				background-image: url('img/claudio.png');
 				background-size: cover;
 				background-position: center;
 				display: inline-block;
-				
+				margin-left: 0;
+				margin-right: 24px;
 			}
-			/*Protagonista*/
+			
+		/*Protagonista*/
 			.msg-avatar2{
-				width: 130px;
+					width: 130px;
 				height: 130px;
-				
-				background: #000000ad;
+				background: #fcfcfc6c;
 				flex-shrink: 0;
 				background-image: url('img/protagonista.png');
 				background-size: cover;
 				background-position: center;
 				display: inline-block;
-				
+				margin-left: 0;
+				margin-right: 24px;
 			}

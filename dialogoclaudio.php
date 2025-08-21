@@ -6,6 +6,9 @@
     <title>Diálogo</title>
     <link rel="stylesheet" href="Caixa-dialogo.css">
     <link rel="stylesheet" href="responsivo.css">
+    
+    
+    
     <style>
 		body {
 			margin: 0;
@@ -17,54 +20,61 @@
 			background-repeat: no-repeat;
 			font-family: Arial, sans-serif;
 		}
-        .personagem {
+        .personagem-claudio {
             position: absolute;
             top: 35%;
             left: 57%; 
             transform: translate(-50%, -50%);
             width: 100px;
-            cursor: pointer;
-            transition: transform 0.3s ease; 
+            height: auto;
+            transition: transform 0.3s ease;
         }
-        .personagem1 {
+       
+       
+          .personagem-claudio:hover {
+              transform: translate(-50%, -50%) scale(1.3);
+          }
+       
+       
+       
+       .personagem-vitor {
             position: absolute;
             top: 60%;
             left: 70%; 
             transform: translate(-50%, -50%);
             width: 100px;
             cursor: pointer;
-            transition: transform 0.3s ease; 
-        }
-        .personagem1 img {
-            transform: scaleX(-1);
-        }
-        .personagem:hover {
-			transform: translate(-50%, -50%) scale(1.2);
+            
+    
 		}
-        .mensagem.mostrar {
-            display: block;
-        }
-
+        
         .btn-ok {
             display: none;
             margin-top: 10px;
-            padding: 6px 14px;
+            padding: 9px 14px;
             border: none;
             border-radius: 6px;
-            background: black;
+            background: white;
             color: white;
-            font-size: 16px;
+            font-size: 30px;
             cursor: pointer;
         }
-	</style>
+	
+    </style>
+
+
+
+
+
+
 </head>
 <body class="pagina-dialogoclaudio">
     
-    <button id="btn-personagem" class="personagem" style="background: none; border: none; padding: 0;">
+    <button id="btn-personagem" class="personagem-claudio" style="background: none; border: none; padding: 0;">
         <img src="img/claudio.png" alt="Personagem" style="width: 100px; height: auto; display: block;">
     </button>
 
-    <button id="btn-personagem2" class="personagem1" style="background: none; border: none; padding: 0;">
+    <button id="btn-personagem2" class="personagem-vitor" style="background: none; border: none; padding: 0;">
         <img src="img/protagonista.png" alt="Personagem" style="width: 80px; height: auto; display: block;">
     </button>
 
@@ -72,18 +82,24 @@
    
    
    
-    <!-- Caixas de mensagem -->
-    <div id="caixa-mensagem1" class="mensagem">
-        <span class="msg-avatar1"></span>
+   <!-- Caixa do Claudio -->
+<div id="caixa-mensagem1" class="mensagem">
+    <span class="msg-avatar1"></span>
+    <span class="msg-text">
         CLAUDIO: Harammm te peguei inferior, mexendo no celular? Me entregue isso agora!!!
-    </div>
+    </span>
+</div>
 
-    <div id="caixa-mensagem2" class="mensagem">
-        <span class="msg-avatar2"></span>
+<!-- Caixa do Protagonista -->
+<div id="caixa-mensagem2" class="mensagem">
+    <span class="msg-avatar2"></span>
+    <span class="msg-text">
         VITOR: Calma, professor! Eu só estava vendo o horário da aula.
-        <br>
-        <button id="btn-ok" class="btn-ok"><a href="desafio1.php">OK</a></button>
-    </div>
+    </span>
+    <button id="btn-ok" class="btn-ok" style="margin-left:16px;">
+        <a href="desafio1.php">OK</a>
+    </button>
+</div>
 
    
    

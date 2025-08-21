@@ -6,6 +6,7 @@ body {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
   background: #f9f9f9;
+  
 }
 
 img, video {
@@ -30,9 +31,6 @@ img, video {
 }
 
 /* Exemplo de customização por página */
-body.pagina-desafio1 {
-  background: #e0f7fa;
-}
 
 body.pagina-final {
   background: #fff3e0;
