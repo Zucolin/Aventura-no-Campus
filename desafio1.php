@@ -17,8 +17,10 @@ $_SESSION['fase1_ok'] = true;
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<link rel="stylesheet" href="Caixa-dialogo.css">
+	<link rel="stylesheet" href="responsivo.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Meu Site</title>
@@ -96,7 +98,7 @@ $_SESSION['fase1_ok'] = true;
 
 </head>
 
-<body>
+<body class="pagina-desafio1">
 			
 	<button id="btn-personagem" class="personagem" style="background: none; border: none; padding: 0; cursor: pointer;">
     <img src="img/Renato.png" alt="Personagem" style="width: 70px; height: auto; display: block;">
@@ -104,7 +106,7 @@ $_SESSION['fase1_ok'] = true;
 
 
 <button id="btn-personagem" class="personagem-vitor" style="background: none; border: none; padding: 0; cursor: pointer;">
-    <img src="img/vitor.png" alt="Personagem" style="width: 60px; height: auto; display: block;">
+    <img src="img/protagonista.png" alt="Personagem" style="width: 60px; height: auto; display: block;">
 </button>
 
 
@@ -116,7 +118,7 @@ $_SESSION['fase1_ok'] = true;
 
 
 <div id="caixa-mensagem" class="mensagem">
-	<span class="msg-avatar"></span>
+	<span class="msg-avatar2"></span>
 	<span class="msg-text">RENATO: Preciso da sua ajuda, queremos jogar Handebol... Porém não sabemos direito as regras, pode nos informar?</span>
 </div>
 		

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Diálogo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo</title>
     <link rel="stylesheet" href="Caixa-dialogo.css">
-	<style>
+    <link rel="stylesheet" href="responsivo.css">
+    <style>
 		body {
 			margin: 0;
 			padding: 0;
@@ -57,7 +58,7 @@
         }
 	</style>
 </head>
-<body>
+<body class="pagina-dialogoclaudio">
     
     <button id="btn-personagem" class="personagem" style="background: none; border: none; padding: 0;">
         <img src="img/claudio.png" alt="Personagem" style="width: 100px; height: auto; display: block;">
@@ -67,6 +68,10 @@
         <img src="img/protagonista.png" alt="Personagem" style="width: 80px; height: auto; display: block;">
     </button>
 
+   
+   
+   
+   
     <!-- Caixas de mensagem -->
     <div id="caixa-mensagem1" class="mensagem">
         <span class="msg-avatar1"></span>
@@ -80,7 +85,15 @@
         <button id="btn-ok" class="btn-ok"><a href="desafio1.php">OK</a></button>
     </div>
 
-    <script>
+   
+   
+   
+   
+   
+   
+   
+   
+   <script>
         const btnPersonagem = document.getElementById('btn-personagem');
         const msg1 = document.getElementById('caixa-mensagem1');
         const msg2 = document.getElementById('caixa-mensagem2');
