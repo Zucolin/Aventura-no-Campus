@@ -127,7 +127,7 @@ $_SESSION['fase1_ok'] = true;
 	<button class="btn-escolha" id="btn-errado1">7 jogadores, pode usar pé, 3 segundos, 3 passos, drible duplo liberado, área 9m só goleiro, gol conta se tocar na trave, faltas apenas empurrar, punição só cartão amarelo, 2 tempos de 20min.</button>
 	<button class="btn-escolha" id="btn-errado2">7 jogadores, bola deve ser mordida, 10 segundos, 10 passos, drible com mãos e pés ao mesmo tempo, área 15m qualquer jogador pode entrar, punição inexistente, 2 tempos de 30min.</button>
 
-		<a id="btn-proxima-fase" href="fase2.php" target="_self" style="display:none; text-decoration:none;">
+		<a id="btn-proxima-fase" href="desafio2.php" target="_self" style="display:none; text-decoration:none;">
 			<button style="display:block; width: 70vw; max-width: 600px; margin: 40px auto 0 auto; padding: 32px 0; font-size: 2.2em; border-radius: 18px; border: none; background: #1eae60; color: #fff; cursor: pointer;">Ir para a próxima fase</button>
 		</a>
 	

@@ -40,7 +40,7 @@
 				width: 130px;
 				height: 130px;
 				
-				background: #000000ad;
+				background: #fcfcfc6c;
 				flex-shrink: 0;
 				background-image: url('img/renato.jpeg');
 				background-size: cover;
@@ -52,7 +52,7 @@
 				width: 130px;
 				height: 130px;
 				
-				
+				background-color: #ffffff8f;
 				flex-shrink: 0;
 				background-image: url('img/claudio.png.png');
 				background-size: cover;
