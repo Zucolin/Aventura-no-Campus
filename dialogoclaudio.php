@@ -82,55 +82,96 @@
 
    
    
-   
+   <DIV>  <!-- Caixa do Claudio -->
    
    <!-- Caixa do Claudio -->
-<div id="caixa-mensagem1" class="mensagem">
+<div id="caixa-mensagem1" class="mensagem-claudio">
     <span class="msg-avatar1"></span>
     <span class="msg-text">
-        CLAUDIO: Harammm te peguei inferior, mexendo no celular? Me entregue isso agora!!!
+        CLAUDIO: Harammm te peguei, inferior, mexendo no celular? Me entregue isso agora!!!
     </span>
 </div>
 
 <!-- Caixa do Protagonista -->
-<div id="caixa-mensagem2" class="mensagem">
+<div id="caixa-mensagem2" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: Calma, professor! Eu só estava vendo o horário da aula.
+        VITOR: Calma cacete! Eu só estava vendo o horário da aula.
     </span>
+   
+      <!-- Caixa do Claudio -->
+<div id="caixa-mensagem3" class="mensagem-claudio1">
+    <span class="msg-avatar1"></span>
+    <span class="msg-text">
+        CLAUDIO: Blhá Blhá Blhá. Me entregue agora!!!
+    </span>
+
+      <!-- Caixa do Claudio -->
+<div id="caixa-mensagem4" class="mensagem-vitor1">
+    <span class="msg-avatar2"></span>
+    <span class="msg-text">
+        VITOR: Vai me devolver depois meu dispositvo portatil telefone celular?
+    </span>
+
+     <!-- Caixa do Claudio -->
+<div id="caixa-mensagem5" class="mensagem-claudio2">
+    <span class="msg-avatar1"></span>
+    <span class="msg-text">
+        CLAUDIO: Vá ajudar o Renato que penso no seu caso!!!
+    </span>
+   
+   
     <button id="btn-ok" class="btn-ok" style="margin-left:16px;">
         <a href="desafio1.php">OK</a>
     </button>
 </div>
 
    
+   </DIV>
    
    
    
    
    
    
-   
-   <script>
-        const btnPersonagem = document.getElementById('btn-personagem');
-        const msg1 = document.getElementById('caixa-mensagem1');
-        const msg2 = document.getElementById('caixa-mensagem2');
-        const btnOk = document.getElementById('btn-ok');
+<script>
+    const btnPersonagem = document.getElementById('btn-personagem');
+    const msg1 = document.getElementById('caixa-mensagem1');
+    const msg2 = document.getElementById('caixa-mensagem2');
+    const msg3 = document.getElementById('caixa-mensagem3');
+    const msg4 = document.getElementById('caixa-mensagem4');
+    const msg5 = document.getElementById('caixa-mensagem5');
+    const btnOk = document.getElementById('btn-ok');
 
-        btnPersonagem.addEventListener('click', () => {
-            msg1.classList.add('mostrar'); // mostra a primeira
+    btnPersonagem.addEventListener('click', () => {
+        msg1.classList.add('mostrar'); // mostra a primeira
+        setTimeout(() => {
+            msg1.classList.remove('mostrar');
+            msg2.classList.add('mostrar'); // mostra a segunda
             setTimeout(() => {
-                msg1.classList.remove('mostrar');
-                msg2.classList.add('mostrar'); // mostra a segunda
+                msg2.classList.remove('mostrar');
+                msg3.classList.add('mostrar'); // mostra a terceira
                 setTimeout(() => {
-                    btnOk.style.display = "inline-block"; // só aparece no fim dentro da caixa
-                }, 2000); // espera 2s antes de mostrar o botão OK
-            }, 4000); // tempo da primeira mensagem
-        });
+                    msg3.classList.remove('mostrar');
+                    msg4.classList.add('mostrar'); // mostra a quarta
+                    setTimeout(() => {
+                        msg4.classList.remove('mostrar');
+                        msg5.classList.add('mostrar'); // mostra a quinta
+                        setTimeout(() => {
+                            btnOk.style.display = "inline-block"; // aparece no fim
+                        }, 2000); // espera antes do botão aparecer
+                    }, 4000); // tempo da quarta mensagem
+                }, 4000); // tempo da terceira mensagem
+            }, 4000); // tempo da segunda mensagem
+        }, 4000); // tempo da primeira mensagem
+    });
 
-        btnOk.addEventListener('click', () => {
-            window.location.href = "proxima_pagina.html"; // muda de página
-        });
+    btnOk.addEventListener('click', () => {
+        window.location.href = "proxima_pagina.html"; // muda de página
+    });
+</script>
+
+
     </script>
 </body>
 </html>

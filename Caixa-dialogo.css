@@ -1,4 +1,10 @@
-.mensagem {
+
+
+
+/*DIALOGO COM RENATO*/
+
+
+.mensagem-renato{
 	position: fixed;
 	left: 50%;
 	bottom: 30px;
@@ -20,21 +26,192 @@
 	visibility: hidden;
 	
 }
-			
-.msg-text {
+
+
+
+
+
+
+.mensagem-renato.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			.msg-text {
 	display: flex;
 	align-items: center;
 	text-align: left;
 	flex: 1;
+            }
+
+
+
+
+
+
+
+
+
+
+/*DIALOGO COM O CLAUDIO*/
+
+
+.mensagem-vitor{
+	position: fixed;
+	left: 50%;
+	bottom: 30px;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.581);
+	color: #ffffff;
+	padding: 8px 16px;
+	font-size: 2.2em;
+	min-width: 1220px;
+	max-width: 95vw;
+	width: auto;
+	min-height: 80px;
+	box-sizing: border-box;
+	text-align: left;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	visibility: hidden;
+	
 }
-.mensagem.mostrar {
+
+.mensagem-claudio  {
+	position: fixed;
+	left: 50%;
+	bottom: 30px;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.581);
+	color: #ffffff;
+	padding: 8px 16px;
+	font-size: 2.2em;
+	min-width: 1220px;
+	max-width: 95vw;
+	width: auto;
+	min-height: 80px;
+	box-sizing: border-box;
+	text-align: left;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	visibility: hidden;
+	
+}
+
+.mensagem-claudio1  {
+	position: fixed;
+	left: 50%;
+	bottom: 30px;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.581);
+	color: #ffffff;
+	padding: 8px 16px;
+	font-size: 1.2em;
+	min-width: 1220px;
+	max-width: 95vw;
+	width: auto;
+	min-height: 80px;
+	box-sizing: border-box;
+	text-align: left;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	visibility: hidden;
+	
+}	
+
+.mensagem-vitor1{
+	position: fixed;
+	left: 50%;
+	bottom: 30px;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.581);
+	color: #ffffff;
+	padding: 8px 16px;
+	font-size: 1.2em;
+	min-width: 1220px;
+	max-width: 95vw;
+	width: auto;
+	min-height: 80px;
+	box-sizing: border-box;
+	text-align: left;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	visibility: hidden;
+	
+}
+
+.mensagem-claudio2  {
+	position: fixed;
+	left: 50%;
+	bottom: 30px;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.581);
+	color: #ffffff;
+	padding: 8px 16px;
+	font-size: 1.0em;
+	min-width: 1220px;
+	max-width: 95vw;
+	width: auto;
+	min-height: 80px;
+	box-sizing: border-box;
+	text-align: left;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	visibility: hidden;
+	
+}	
+
+
+
+
+
+
+.mensagem-claudio.mostrar {
 	visibility: visible;
 	animation: fadeIn 0.3s;
 			}
+.mensagem-claudio1.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+			}
+.mensagem-claudio2.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+			}
+.mensagem-vitor.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+			}	
+.mensagem-vitor1.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+			}		
 			
 			
-			
-			
 
 
 
@@ -42,7 +219,20 @@
 
 
 
-@keyframes fadeIn {
+
+
+
+
+
+
+
+
+
+
+
+
+
+			@keyframes fadeIn {
 		from { opacity: 0; transform: translateX(-50%) translateY(20px); }
 		to { opacity: 1; transform: translateX(-50%) translateY(0); }
 	}
@@ -74,7 +264,7 @@
 			
 			
 		/*Renato*/
-			.msg-avatar {
+		.msg-avatar {
 				width: 130px;
 				height: 130px;
 				background: #fcfcfc6c;
