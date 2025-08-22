@@ -10,7 +10,7 @@
 	}
 
 	// Pontuação máxima da fase
-	$pontos_maximos = 100;
+	$pontos_maximos = 000;
 
 	// Tempo decorrido desde que a fase começou
 	$tempo_decorrido = time() - $_SESSION['inicio_fase1'];

@@ -1,5 +1,15 @@
 
 
+<?php
+session_start();
+
+if (!isset($_SESSION['permitido']) || $_SESSION['permitido'] !== true) {
+    header("Location: dialogoclaudio.php");
+    exit;
+}
+?>
+
+
 
 
 
@@ -67,12 +77,11 @@
 		
 		.btn-escolha {
 			display: block;
-			width: 80vw;
+			width: 90vw;
 			max-width: 10000px;
 			margin: 20px auto;
 			padding: 24px 0;
-			font-size: clamp  (0.2em, 8vw, 2.8em);
-			border-radius: 16px;
+			font-size: 22px;
 			border: none;
 			color: #fff;
 			cursor: pointer;
@@ -146,7 +155,7 @@
 			setTimeout(() => {
 				document.getElementById('escolhas').style.display = 'block';
 			}, 200); // pequena pausa para transição
-		}, 7000); // 7 segundos
+		}, 2000); // 7 segundos
 	});
 		// Exemplo de uso: classificar botões como certo ou errado
 		document.getElementById('btn-certo').addEventListener('click', function() {

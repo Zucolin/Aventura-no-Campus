@@ -57,7 +57,7 @@
             border: none;
             border-radius: 6px;
             background: white;
-            color: white;
+            color: black;
             font-size: 30px;
             cursor: pointer;
         }
@@ -82,9 +82,9 @@
 
    
    
-   <DIV>  <!-- Caixa do Claudio -->
+
    
-   <!-- Caixa do Claudio -->
+  <!-- Caixa do Claudio -->
 <div id="caixa-mensagem1" class="mensagem-claudio">
     <span class="msg-avatar1"></span>
     <span class="msg-text">
@@ -92,50 +92,52 @@
     </span>
 </div>
 
-<!-- Caixa do Protagonista -->
+<!-- Caixa do Vitor -->
 <div id="caixa-mensagem2" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
         VITOR: Calma cacete! Eu só estava vendo o horário da aula.
     </span>
-   
-      <!-- Caixa do Claudio -->
-<div id="caixa-mensagem3" class="mensagem-claudio1">
+</div>
+
+<!-- Caixa do Claudio -->
+<div id="caixa-mensagem3" class="mensagem-claudio">
     <span class="msg-avatar1"></span>
     <span class="msg-text">
         CLAUDIO: Blhá Blhá Blhá. Me entregue agora!!!
     </span>
+</div>
 
-      <!-- Caixa do Claudio -->
-<div id="caixa-mensagem4" class="mensagem-vitor1">
+<!-- Caixa do Vitor -->
+<div id="caixa-mensagem4" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
         VITOR: Vai me devolver depois meu dispositvo portatil telefone celular?
     </span>
+</div>
 
-     <!-- Caixa do Claudio -->
-<div id="caixa-mensagem5" class="mensagem-claudio2">
+<!-- Caixa do Claudio -->
+<div id="caixa-mensagem5" class="mensagem-claudio">
     <span class="msg-avatar1"></span>
     <span class="msg-text">
         CLAUDIO: Vá ajudar o Renato que penso no seu caso!!!
     </span>
-   
-   
-    <button id="btn-ok" class="btn-ok" style="margin-left:16px;">
-        <a href="desafio1.php">OK</a>
-    </button>
+
+    <form action="passou1.php" method="post">
+        <button id="btn-ok" class="btn-ok" name="acesso1" type="submit" value="ok" style="margin-left:16px;">
+            OK
+        </button>
+    </form>
 </div>
 
-   
-   </DIV>
-   
-   
-   
+
+
    
    
    
 <script>
-    const btnPersonagem = document.getElementById('btn-personagem');
+   
+const btnPersonagem = document.getElementById('btn-personagem');
     const msg1 = document.getElementById('caixa-mensagem1');
     const msg2 = document.getElementById('caixa-mensagem2');
     const msg3 = document.getElementById('caixa-mensagem3');
@@ -172,7 +174,7 @@
 </script>
 
 
-    </script>
+  
 </body>
 </html>
 <?php
