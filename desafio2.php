@@ -1,12 +1,13 @@
 <?php
+
 session_start();
-// Verifica se a fase 1 foi concluída
-if (!isset($_SESSION['fase1_ok']) || $_SESSION['fase1_ok'] !== true) {
-    // Redireciona para a primeira fase se tentar pular
-    header('Location: desafio1.html');
-    exit();
+
+if (!isset($_SESSION['permitido']) || $_SESSION['permitido'] !== true) {
+    header("Location: dialogoclaudio.php");
+    exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

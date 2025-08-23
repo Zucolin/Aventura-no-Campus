@@ -96,7 +96,7 @@
 <div id="caixa-mensagem2" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: Calma cacete! Eu só estava vendo o horário da aula.
+        VITOR: Calma ai Claudio! Eu só estava vendo o horário da aula.
     </span>
 </div>
 
