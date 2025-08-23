@@ -1,7 +1,7 @@
 
 
 
-/*DIALOGO COM RENATO*/
+
 
 
 .mensagem-renato{
@@ -25,26 +25,12 @@ position: fixed;
     visibility: hidden;
 	
 }
-
-
-
 .mensagem-renato.mostrar {
 	visibility: visible;
 	animation: fadeIn 0.3s;
 			}
+            
 
-
-
-
-
-
-
-
-
-
-
-
-/*DIALOGO COM O CLAUDIO*/
 
 .mensagem-claudio  {
 	position: fixed;
@@ -67,6 +53,12 @@ position: fixed;
     visibility: hidden;
 	
 }
+.mensagem-claudio.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+            }
+
+
 
 .mensagem-vitor{
 	position: fixed;
@@ -89,20 +81,66 @@ position: fixed;
     visibility: hidden;
 	
 }
-
-/*            ---------------------------                */
-
-
-.mensagem-claudio.mostrar {
-	visibility: visible;
-	animation: fadeIn 0.3s;
-}
 .mensagem-vitor.mostrar {
 	visibility: visible;
 	animation: fadeIn 0.3s;
+            }
+
+
+
+.mensagem-celso{
+	position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.581);
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 2.2em;
+    width: 90vw; 
+    max-width: 1200px;
+    min-height: 80px;
+    box-sizing: border-box;
+    text-align: left;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    visibility: hidden;
 }
-			
-			
+.mensagem-celso.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+            }
+
+
+
+.mensagem-juliana{
+	position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.581);
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 2.2em;
+    width: 90vw; 
+    max-width: 1200px;
+    min-height: 80px;
+    box-sizing: border-box;
+    text-align: left;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    visibility: hidden;
+}
+.mensagem-juliana.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+            }
+
+
 
 
 
@@ -114,8 +152,8 @@ position: fixed;
 
 
 @keyframes fadeIn {
-		from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-		to { opacity: 1; transform: translateX(-50%) translateY(0); }
+	from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+	to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 	
@@ -155,7 +193,7 @@ position: fixed;
 
 
 
-.msg-avatar, .msg-avatar1, .msg-avatar2 {
+.msg-avatar, .msg-avatar1, .msg-avatar2, .msg-avatar3, .msg-avatar4 {
 		width: 36px;
 		height: 36px;
 }
@@ -175,8 +213,8 @@ position: fixed;
 			
 			
 		/*Renato*/
-		.msg-avatar {
-				    width: 130px;
+		    .msg-avatar {
+				width: 130px;
 				height: 130px;
 				background: #fcfcfc6c;
 				flex-shrink: 0;
@@ -209,6 +247,34 @@ position: fixed;
 				background: #fcfcfc6c;
 				flex-shrink: 0;
 				background-image: url('img/protagonista.png');
+				background-size: cover;
+				background-position: center;
+				display: inline-block;
+				margin-left: 0;
+				margin-right: 24px;
+			}
+
+        /*Celso*/
+			.msg-avatar3{
+				width: 130px;
+				height: 130px;
+				background: #fcfcfc6c;
+				flex-shrink: 0;
+				background-image: url('img/Celso.png');
+				background-size: cover;
+				background-position: center;
+				display: inline-block;
+				margin-left: 0;
+				margin-right: 24px;
+			}
+
+        /*Juliana*/
+			.msg-avatar4{
+				width: 130px;
+				height: 130px;
+				background: #fcfcfc6c;
+				flex-shrink: 0;
+				background-image: url('img/juliana.png');
 				background-size: cover;
 				background-position: center;
 				display: inline-block;
