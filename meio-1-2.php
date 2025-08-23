@@ -36,7 +36,7 @@ if (!isset($_SESSION['permitido2']) || $_SESSION['permitido2'] !== true) {
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background-image: url('img/laboratorio.jpg');
+            background-image: url('img/MEIO.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

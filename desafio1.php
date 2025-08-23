@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['permitido']) || $_SESSION['permitido'] !== true) {
+if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
     header("Location: dialogoclaudio.php");
     exit;
 }
@@ -85,6 +85,11 @@ if (!isset($_SESSION['permitido']) || $_SESSION['permitido'] !== true) {
             display: block; /* precisa ser block para o fade funcionar */
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            background: #1eae60;
+            color: #fff;
+            padding: 12px 24px;
+            width: 200px;      
+            height: 80px;
         }
 
         #btn-proxima-fase.mostrar {
@@ -142,9 +147,12 @@ if (!isset($_SESSION['permitido']) || $_SESSION['permitido'] !== true) {
         <span class="msg-avatar2"></span>
         <span class="msg-text">Fui mais que obrigado né!!!</span>
 
-        <form id="btn-proxima-fase" action="passou1.php" method="post">
-            <button type="submit" name="acesso2" value="ok1" style="display:block; width: 70vw; max-width:400px; margin:40px auto 0 auto; padding:32px 0; font-size:1.2em; border:none; background:#1eae60; color:#fff;">Ir para a próxima fase</button>
-        </form>
+      <form action="passou1.php" method="post">
+    <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok1">
+        Ir para a próxima fase
+    </button>
+</form>
+
     </div>
 
     <script>
