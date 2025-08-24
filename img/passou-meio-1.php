@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if (isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok1') {
-    $_SESSION['permitido2'] = true;
-    header("Location: meio-1-2.php");
+if (isset($_POST['acesso3']) && $_POST['acesso3'] === 'ok3') {
+    $_SESSION['permitido3'] = true;
+    header("Location: biblioteca.php");
     exit;
 } else {
     // Se tentarem acessar direto este arquivo sem o botão:

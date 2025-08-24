@@ -54,11 +54,30 @@ if (!isset($_SESSION['permitido2']) || $_SESSION['permitido2'] !== true) {
     </div>
 
   <!-- Botões de escolha (escondidos inicialmente) -->
-    <div id="botoes-escolha" class="botoes-escolhas" style="display:none; text-align:center; margin-top:20px;">
-        <button onclick="window.location.href='biblioteca.php'">Ir para a biblioteca</button>
-        <button onclick="window.location.href='local2.php'">Ir para o laboratório</button>
-        <button onclick="window.location.href='brefeitorio.php'">Ir para o refeitório</button>
-    </div>
+
+
+<div id="botoes-escolha" class="botoes-escolhas" style="text-align:center; margin-top:20px; display:none;">
+
+    <!-- Biblioteca (sempre acessível) -->
+    
+    <form action="passou.php" method="post" style="display:inline;">
+        <button name="acesso3" type="submit" value="ok3">Ir para a biblioteca</button>
+    </form>
+
+    <!-- Refeitório (só libera depois da biblioteca) -->
+    
+    <?php if (isset($_SESSION['passou_biblioteca']) && $_SESSION['passou_biblioteca'] === true): ?>
+       
+       
+        <form action="passou.php" method="post" style="display:inline;">
+            <button name="acesso4" type="submit" value="ok4">Ir para o refeitório</button>
+        </form>
+    
+    
+        <?php else: ?>
+        <button style="background:red; color:white;" disabled>Ir para o refeitório</button>
+    <?php endif; ?>
+
 </div>
 
 
@@ -68,18 +87,15 @@ if (!isset($_SESSION['permitido2']) || $_SESSION['permitido2'] !== true) {
 
 
 <script>
-// Mensagens
+
 const msg1 = document.getElementById('caixa-mensagem1');
 const msg2 = document.getElementById('caixa-mensagem2');
 const msg3 = document.getElementById('caixa-mensagem3');
 const msg4 = document.getElementById('caixa-mensagem4');
-
-// Botão Celso
 const btnCelso = document.getElementById('btn-celso');
-
-// Botões de escolha
 const botoesEscolha = document.getElementById('botoes-escolha');
 
+// Função do diálogo
 function mostrarMensagens() {
     msg1.style.display = "flex";
     msg1.classList.add('mostrar');
@@ -100,9 +116,12 @@ function mostrarMensagens() {
                 msg4.classList.add('mostrar');
 
                 setTimeout(() => {
-                    // Mostra os 3 botões de escolha
+                    // Mostra os botões
                     botoesEscolha.style.display = "block";
-                }, 3000); // 3s antes de aparecer os botões
+
+                    // 🔹 Salva checkpoint
+                    sessionStorage.setItem("checkpointMeio1", "botoes");
+                }, 3000);
 
             }, 5000);
 
@@ -111,8 +130,17 @@ function mostrarMensagens() {
     }, 5000);
 }
 
-// Começa apenas ao clicar no Celso
-btnCelso.addEventListener("click", mostrarMensagens);
+// Se já passou pelo diálogo antes, pula direto pros botões
+if (sessionStorage.getItem("checkpointMeio1") === "botoes") {
+    botoesEscolha.style.display = "block";
+} else {
+    // Começa apenas ao clicar no Celso
+    btnCelso.addEventListener("click", mostrarMensagens);
+}
+</script>
+
+
+
 </script>
 
 

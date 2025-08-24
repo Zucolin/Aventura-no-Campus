@@ -5,10 +5,6 @@ if (!isset($_SESSION['permitido3']) || $_SESSION['permitido3'] !== true) {
     header("Location: dialogoclaudio.php");
     exit;
 }
-
-$_SESSION['passou_biblioteca'] = true;
-
-
 ?>
 
 

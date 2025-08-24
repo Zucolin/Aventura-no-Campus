@@ -1,0 +1,37 @@
+/* responsivo.css: regras globais e por página */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* Exemplo de customização por página */
+
+body.pagina-final {
+  background: #fff3e0;
+}

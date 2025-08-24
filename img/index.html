@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="responsivo.css">
+</head>
+<body class="pagina-index">
+    <a href="dialogoclaudio.php"><img id="btn-iniciar" src="img/iniciar.png" alt="Iniciar Jogo"></a>
+</body>
+</html>
+
+<style>
+
+body {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("img/ceu.png") no-repeat center center; /* sua imagem de fundo */
+      background-size: cover; /* cobre toda a tela */
+      image-rendering: pixelated; /* deixa pixelado */
+      image-rendering: crisp-edges;
+    }
+
+    #btn-iniciar {
+      cursor: pointer;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      width: 300px; /* ajuste conforme o tamanho da sua arte */
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #btn-iniciar:hover {
+      transform: scale(1.2);
+    }
+
+    </style>

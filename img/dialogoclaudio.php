@@ -123,7 +123,7 @@
         CLAUDIO: Vá ajudar o Renato que penso no seu caso!!!
     </span>
 
-    <form action="passou.php" method="post">
+    <form action="passouclaudio.php" method="post">
         <button id="btn-ok" class="btn-ok" name="acesso1" type="submit" value="ok" style="margin-left:16px;">
             OK
         </button>

@@ -330,18 +330,3 @@ position: fixed;
 				margin-right: 24px;
                 margin-left: 270px;
 			}
-
-        /*livro-misterio*/
-			.msg-avatar-celso{
-				width: 130px;
-				height: 130px;
-				background: #fcfcfc00;
-				flex-shrink: 0;
-				background-image: url('img/livro-celso.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-                margin-left: 270px;
-			}
