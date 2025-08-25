@@ -1,6 +1,28 @@
 <?php
 session_start();
 
+
+
+
+
+
+if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
+    // Libera todos
+    $_SESSION['permitido1'] = true;
+    $_SESSION['permitido2'] = true;
+    $_SESSION['permitido3'] = true;
+    $_SESSION['permitido4'] = true;
+    $_SESSION['permitido5'] = true;
+
+    header("Location: dialogoclaudio.php"); // manda direto
+    exit;
+}
+
+
+
+
+
+
 // Botão acesso1
 if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok') {
     $_SESSION['permitido1'] = true;

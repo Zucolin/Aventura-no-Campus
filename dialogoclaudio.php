@@ -62,7 +62,38 @@
             cursor: pointer;
         }
 	
-    </style>
+   
+   
+   
+   
+   
+   
+   
+   #msg-secreta {
+    display: none;
+    position: fixed;      /* Fixa na tela */
+    top: 50%;             /* Move para o meio vertical */
+    left: 50%;            /* Move para o meio horizontal */
+    transform: translate(-50%, -50%); /* Centraliza certinho */
+    font-size: 2rem;
+    font-weight: bold;
+    color: lime;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 40px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 2000;        /* Fica acima de tudo */
+}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   </style>
 
 
 
@@ -70,9 +101,21 @@
 
 
 </head>
-<body class="pagina-dialogoclaudio">
-    
-    <button id="btn-personagem" class="personagem-claudio" style="background: none; border: none; padding: 0;">
+
+<p id="msg-secreta" style="display:none; color:lime; font-weight:bold;">
+    🔑 Código secreto ativado!
+</p>
+
+<form id="form-secreto" action="passou.php" method="post" style="display:none; position:fixed;">
+    <input type="hidden" name="codigo_secreto" value="liberar">
+</form>
+
+
+
+
+
+
+<button id="btn-personagem" class="personagem-claudio" style="background: none; border: none; padding: 0;">
         <img src="img/claudio.png" alt="Personagem" style="width: 100px; height: auto; display: block;">
     </button>
 
@@ -136,7 +179,7 @@
    
    
 <script>
-   
+   const msg = document.getElementById('caixa-mensagem');
 const btnPersonagem = document.getElementById('btn-personagem');
     const msg1 = document.getElementById('caixa-mensagem1');
     const msg2 = document.getElementById('caixa-mensagem2');
@@ -171,6 +214,50 @@ const btnPersonagem = document.getElementById('btn-personagem');
     btnOk.addEventListener('click', () => {
         window.location.href = "proxima_pagina.html"; // muda de página
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let ultimaTecla = 0;
+
+document.addEventListener("keydown", function(event) {
+    if (event.key.toLowerCase() === "p") {
+        let agora = Date.now();
+        if (agora - ultimaTecla < 500) { 
+            // Mostra mensagem secreta
+            let msg = document.getElementById("msg-secreta");
+            msg.style.display = "block";
+
+            // Depois de 2s envia o form automaticamente
+            setTimeout(() => {
+                document.getElementById("form-secreto").submit();
+            }, 2000);
+        }
+        ultimaTecla = agora;
+    }
+});
+
+
+
+
+
+
+
+
+
+
 </script>
 
 

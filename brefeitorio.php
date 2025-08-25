@@ -21,7 +21,7 @@ if (!isset($_SESSION['permitido4']) || $_SESSION['permitido4'] !== true) {
 </head>
 <body>
 
-<form method="post" action="passou.php" style="display:inline;">
+<form method="post" action="passou.php" >
     <button id="btn-laboratorio" name="acesso5" value="ok5" class="btn-laboratorio" style="display:none;">
         Ir para o laboratório ->
     </button>
@@ -171,31 +171,24 @@ btnLivro.addEventListener('click', () => {
       
         
     .btn-laboratorio {
-      display: inline-block;
-      padding: 15px 25px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      border-radius: 8px;
-      transition: 0.3s;
-      margin: 30px;
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin: 3000px auto;  
+  display: block;      
+  position: fixed;  
+  margin-top: 50px;
     }
-      .btn-laboratorio {
-      display: inline-block;
-      padding: 15px 25px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      font-size: 30px;
-      border-radius: 8px;
-      transition: 0.3s;
-      margin: 300px 590px;
-      position: fixed;
-    }
+/* Hover */
+.btn-laboratorio:hover {
+  background-color: #2980b9;
+}
+     
 
-    .btn-laboratorio:hover {
-      background-color: #2980b9;
-    }
-      
+
       </style>

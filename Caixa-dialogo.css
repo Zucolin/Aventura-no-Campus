@@ -168,11 +168,31 @@ position: fixed;
 	animation: fadeIn 0.3s;
             }
 
-
-
-
-
-
+            
+.mensagem-secreta {
+	position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.581);
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 2.2em;
+    width: 90vw; 
+    max-width: 1200px;
+    min-height: 80px;
+    box-sizing: border-box;
+    text-align: left;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    visibility: hidden;
+}
+.mensagem-secreta.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+}
 
 
 
