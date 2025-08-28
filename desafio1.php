@@ -1,10 +1,10 @@
 <?php
-session_start();
 
 if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
     header("Location: dialogoclaudio.php");
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -127,16 +127,16 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
     <!-- Escolhas -->
     <div id="escolhas" style="display:none; text-align:center; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:101; width:100vw;">
-        <button class="btn-escolha" id="btn-certo">
-            7 jogadores, bola sem pé, 3 segundos, 3 passos, sem drible duplo, área 6m só goleiro, gol cruzar linha, faltas empurrar/segurar/bater, punição amarelo/2min/vermelho, 2 tempos 30min.
-        </button>
-        <button class="btn-escolha" id="btn-errado1">
-            7 jogadores, pode usar pé, 3 segundos, 3 passos, drible duplo liberado, área 9m só goleiro, gol conta se tocar na trave, faltas apenas empurrar, punição só cartão amarelo, 2 tempos de 20min.
-        </button>
-        <button class="btn-escolha" id="btn-errado2">
-            7 jogadores, bola deve ser mordida, 10 segundos, 10 passos, drible com mãos e pés ao mesmo tempo, área 15m qualquer jogador pode entrar, punição inexistente, 2 tempos de 30min.
-        </button>
-    </div>
+    <form method="POST" >
+        <input type="hidden" name="resposta" id="resposta">
+        <input type="hidden" name="tempo" id="tempo">
+
+        <button type="button" class="btn-escolha" id="btn-certo" onclick="enviarResposta('incorreta')">7 jogadores, bola sem pé, 3 segundos, 3 passos, sem drible duplo, área 6m só goleiro, gol cruzar linha, faltas empurrar/segurar/bater, punição amarelo/2min/vermelho, 2 tempos 30min.</button>
+        <button type="button" class="btn-escolha" id="btn-errado1" onclick="enviarResposta('correta')"> 7 jogadores, pode usar pé, 3 segundos, 3 passos, drible duplo liberado, área 9m só goleiro, gol conta se tocar na trave, faltas apenas empurrar, punição só cartão amarelo, 2 tempos de 20min.</button>
+        <button type="button" class="btn-escolha" id="btn-errado2" onclick="enviarResposta('incorreta')"> 7 jogadores, bola deve ser mordida, 10 segundos, 10 passos, drible com mãos e pés ao mesmo tempo, área 15m qualquer jogador pode entrar, punição inexistente, 2 tempos de 30min.</button>
+    </form>
+     </div>
+    
 
     <div id="caixa-mensagem4" class="mensagem-renato" style="display:none;">
         <span class="msg-avatar"></span>
@@ -227,6 +227,23 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             }, 5000);
         });
     </script>
+    <?php
+    
+        require_once "pontuacao.php";
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $resposta = $_POST['resposta'];
+        $tempo = intval($_POST['tempo']); 
+
+        if ($resposta === "correta") {
+            $pontosGanhos = max(15 - $tempo, 1); // aqui vale 15 pontos
+            adicionarPontos($pontosGanhos);
+        } else {
+            adicionarPontos(-5); // errou aqui perde -5
+        }
+    }
+    ?>  
+
 
 </body>
 </html>
