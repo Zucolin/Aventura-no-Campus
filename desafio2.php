@@ -78,8 +78,6 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
         <span class="msg-avatar"></span>
         <span class="msg-text">Bom garoto.. Agora vai que Fabio te espera</span>
      
-
-
       <form action="passou.php" method="post">
     <button id="btn-proxima-fase" type="submit" name="acesso6" value="ok6" style="display:none;">
         Ok
