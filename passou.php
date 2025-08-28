@@ -13,6 +13,7 @@ if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
     $_SESSION['permitido3'] = true;
     $_SESSION['permitido4'] = true;
     $_SESSION['permitido5'] = true;
+    $_SESSION['permitido6'] = true;
 
     header("Location: dialogoclaudio.php"); // manda direto
     exit;
@@ -53,6 +54,11 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok') {
     header("Location: desafio2.php");
     exit;
 
+       //botão acesso6
+} elseif (isset($_POST['acesso6']) && $_POST['acesso6'] === 'ok6') {
+    $_SESSION['permitido6'] = true;
+    header("Location: desafio3.php");
+    exit;
 
 
 

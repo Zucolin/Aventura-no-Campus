@@ -64,13 +64,13 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
  <!-- Escolhas -->
     <div id="escolhas" style="display:none; text-align:center; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:101; width:100vw;">
         <button class="btn-escolha" id="btn-certo">
-          "    " que reage de forma exotermica no "   "
+        Metano (CH₄) que reage com oxigênio (O₂) liberando energia em forma de calor e luz.
         </button>
         <button class="btn-escolha" id="btn-errado1">
-          "   " que usam misturado com "   " reage de boa forma
+        Hidroxido de sodio (NaOH) que reage com ácido clorídrico (HCl) liberando água e sal.
         </button>
         <button class="btn-escolha" id="btn-errado2">
-           "   " que usam misturado com "   " reage de boa forma
+        Carbonato de cálcio (CaCO₃) que reage com ácido sulfúrico (H₂SO₄) liberando gás carbônico (CO₂) e água.
         </button>
     </div>
 
@@ -81,7 +81,7 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
 
 
       <form action="passou.php" method="post">
-    <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok1" style="display:none;">
+    <button id="btn-proxima-fase" type="submit" name="acesso6" value="ok6" style="display:none;">
         Ok
     </button>
 </form>

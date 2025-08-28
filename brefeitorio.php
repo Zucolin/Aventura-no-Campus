@@ -10,6 +10,9 @@ if (!isset($_SESSION['permitido4']) || $_SESSION['permitido4'] !== true) {
 ?>
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -40,8 +43,7 @@ if (!isset($_SESSION['permitido4']) || $_SESSION['permitido4'] !== true) {
 
 <!--  mensagem do livro    -->
 
-
-     <div id="caixa-mensagem4" class="mensagem-vitor">
+    <div id="caixa-mensagem4" class="mensagem-vitor">
         <span class="msg-avatar2"></span>
         <span class="msg-text">VITOR:   Otimo achei até que enfim </span>
     </div>
@@ -51,17 +53,19 @@ if (!isset($_SESSION['permitido4']) || $_SESSION['permitido4'] !== true) {
         <span class="msg-text">VITOR:  Cansado já.. Só queria meu celular</span>
     </div>
 
-   
-
-<div id="caixa-mensagem7" class="mensagem-livro-misterio">
+    <div id="caixa-mensagem7" class="mensagem-livro-misterio">
         <span class="msg-avatar-celso"></span>
         <span class="msg-livro-misterio">                    <STRONG>      LIVRO DO CELSO   </STRONG></span>
     </div>
 
 
 
-<script>
 
+
+
+
+
+<script>
 
 const btnLivro = document.getElementById('btn-livro-celso');
 const msg7 = document.getElementById('caixa-mensagem7');
@@ -98,13 +102,8 @@ btnLivro.addEventListener('click', () => {
 
 </script>
 
-
-
-
-
 </body>
 </html>
-
 
 
 
@@ -169,26 +168,25 @@ btnLivro.addEventListener('click', () => {
 
       
       
+
         
-    .btn-laboratorio {
-  display: inline-block;
-  padding: 15px 25px;
-  background-color: #3498db;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 8px;
-  transition: 0.3s;
-  margin: 3000px auto;  
-  display: block;      
-  position: fixed;  
-  margin-top: 50px;
-    }
-/* Hover */
-.btn-laboratorio:hover {
-  background-color: #2980b9;
-}
+        .btn-laboratorio {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+            margin: 3000px auto;  
+            display: block;      
+            position: fixed;  
+            margin-top: 50px;
+        }
+
+        .btn-laboratorio:hover {
+            background-color: #2980b9;
+       }
      
-
-
       </style>

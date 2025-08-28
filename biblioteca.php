@@ -19,8 +19,6 @@ $_SESSION['passou_biblioteca'] = true;
 <head>
     <link rel="stylesheet" href="Caixa-dialogo.css">
     <link rel="stylesheet" href="responsivo.css">
-
-
 <meta charset="UTF-8">
     <title>Desafio 2</title>
 </head>
@@ -39,8 +37,6 @@ $_SESSION['passou_biblioteca'] = true;
         <img src="img/juliana.png" alt="Juliana" style="width:90px;height:auto;display:block;">
     </button>
 
-
-
  <button id="btn-livro-misterio" class="livro-misterio" style="background:none;border:none;padding:0;cursor:pointer;">
         <img src="img/livro-qr.png" alt="Livro-misterioso" style="width:10px; ">
     </button>
@@ -57,7 +53,7 @@ $_SESSION['passou_biblioteca'] = true;
         <span class="msg-text">VITOR: Eu não faço amor com livros, vim procurar pelo livro do Celso</span>
     </div>
 
-    <div id="caixa-mensagem3" class="mensagem-renato">
+    <div id="caixa-mensagem3" class="mensagem-juliana">
         <span class="msg-avatar4"></span>
         <span class="msg-text">JULIANA: Tudo bem. procure passando o Mouse pelas prateleiras </span>
     </div>
@@ -84,7 +80,7 @@ $_SESSION['passou_biblioteca'] = true;
 
 <div id="caixa-mensagem7" class="mensagem-livro-misterio">
         <span class="msg-avatar-misterio"></span>
-        <span class="msg-livro-misterio">                    <STRONG>      LIVRO MISTERIOSO   </STRONG></span>
+        <span class="msg-livro-misterio">     <STRONG>      LIVRO MISTERIOSO   </STRONG></span>
     </div>
 
 
@@ -213,9 +209,8 @@ btnLivro.addEventListener('click', () => {
        
        
        
-
-
-        .personagem-juliana,
+       
+       .personagem-juliana,
         .personagem-vitor {
             position: absolute;
             transform: translate(-50%, -50%);
@@ -223,19 +218,16 @@ btnLivro.addEventListener('click', () => {
             height: auto;
             transition: transform 0.3s ease;
         }
-
         .personagem-juliana {
             top: 40%;
             left: 25%;
             transform: scaleX(-1);
             transition: transform 0.3s ease;
         }
-
         .personagem-vitor {
             top: 65%;
             left: 15%;
         }
-
         .personagem-juliana:hover{
             transform: scale(1.4) scaleX(-1);
         }
@@ -254,9 +246,9 @@ btnLivro.addEventListener('click', () => {
       transition: 0.3s;
       margin: 30px;
     }
-
     .btn-voltar:hover {
       background-color: #2980b9;
     }
        
-       </style>
+      
+      </style>

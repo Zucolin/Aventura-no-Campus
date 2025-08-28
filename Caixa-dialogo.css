@@ -142,32 +142,36 @@ position: fixed;
 
 
 
-.mensagem-livro-misterio{
-	position: fixed;
+.mensagem-livro-misterio {
+    position: fixed;
     left: 50%;
-    bottom: 30px;
+    top: 30px;  /* controla a distância da borda inferior */
     transform: translateX(-50%);
+    
     background: rgba(0, 0, 0, 0.581);
     color: #ffffff;
     padding: 8px 16px;
     font-size: 2.2em;
-    width: 90vw; 
+    width: 90vw;
     max-width: 1200px;
     min-height: 80px;
     box-sizing: border-box;
     text-align: left;
+    
     z-index: 100;
     display: flex;
     align-items: center;
     gap: 24px;
+    
     visibility: hidden;
-    margin-bottom: 600px;
 }
-.mensagem-livro-misterio.mostrar {
-	visibility: visible;
-	animation: fadeIn 0.3s;
-            }
 
+.mensagem-livro-misterio.mostrar {
+    visibility: visible;
+    animation: fadeIn 0.3s;
+}
+
+  
             
 .mensagem-secreta {
 	position: fixed;
@@ -193,6 +197,38 @@ position: fixed;
 	visibility: visible;
 	animation: fadeIn 0.3s;
 }
+
+
+
+.mensagem-fabio{
+	position: fixed;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.581);
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 2.2em;
+    width: 90vw; 
+    max-width: 1200px;
+    min-height: 80px;
+    box-sizing: border-box;
+    text-align: left;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    visibility: hidden;
+    margin-bottom: 600px;
+}
+.mensagem-fabio.mostrar {
+	visibility: visible;
+	animation: fadeIn 0.3s;
+            }
+
+
+
+
 
 
 
@@ -238,32 +274,17 @@ position: fixed;
 
 
 
-
-
-
-
-
-
-
-
-
 .msg-avatar, .msg-avatar1, .msg-avatar2, .msg-avatar3, .msg-avatar4, .msg-avatar-misterio {
 		width: 36px;
 		height: 36px;
-}
-
-
-			
+}			
 .msg-text {
 	display: flex;
 	align-items: center;
 	text-align: left;
 	flex: 1;
- }
+}
 
-			
-			
-	
 			
 			
 		/*Renato*/
@@ -348,7 +369,6 @@ position: fixed;
 				display: inline-block;
 				margin-left: 0;
 				margin-right: 24px;
-                margin-left: 270px;
 			}
 
         /*livro-misterio*/
@@ -363,5 +383,28 @@ position: fixed;
 				display: inline-block;
 				margin-left: 0;
 				margin-right: 24px;
-                margin-left: 270px;
-			}
+            }
+
+        /*Fabio*/
+            .msg-avatar5{
+                width: 130px;
+				height: 130px;
+				background: #fcfcfc00;
+				flex-shrink: 0;
+				background-image: url('img/Fabio.png');
+				background-size: cover;
+				background-position: center;
+				display: inline-block;
+				margin-left: 0;
+				margin-right: 24px;
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            }
