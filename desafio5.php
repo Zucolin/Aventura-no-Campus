@@ -39,6 +39,8 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 
 
 
+
+
 <!-- Caixa do Vitor -->
 <div id="caixa-mensagem1" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
@@ -53,6 +55,20 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
         VITOR: **Vamos dar uma olhada em tudo aqui**
     </span>
 </div>
+
+
+
+
+
+<div id="caixa-cofre" class="mensagem-vitor">
+    <span class="msg-avatar2"></span>
+    <span class="msg-text">
+        VITOR: **Nossa um cofre!!, Meu  celular deve estar aqui dentro**
+    </span>
+</div>
+
+
+
 
 
 <div id="caixa-senha1" class="mensagem-vitor">
@@ -78,34 +94,44 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 
 
 
-<div id="caixa-cofre" class="mensagem-vitor">
-    <span class="msg-avatar2"></span>
-    <span class="msg-text">
-        VITOR: **Nossa um cofre!!, Meu  celular deve estar aqui dentro**
-    </span>
+
+
+
+<div class="bg">
+  <div class="codigo"></div>
+  <form class="form1" action="verificar.php" method="POST">
+    <label for="resposta">Digite a Senha:</label><br>
+    <input type="text" id="resposta" name="resposta" required><br>
+    <button value="ok7" class="enviar" type="submit">Enviar</button>
+  </form>
 </div>
+
+
+
 
 
 <script> 
 
-const btnsenha = document.getElementById('btn-vitor');
+const btnsenha = document.getElementById('btn-senha');
 const btncofre = document.getElementById('btn-cofre');
 
+
+//   CARREGAR PAGINA
 const msg1 = document.getElementById('caixa-mensagem1');
 const msg2 = document.getElementById('caixa-mensagem2');
 
-
+//    COFRE   
 const msg3 = document.getElementById('caixa-cofre');
 
-
+//    SENHA
 const msg4 = document.getElementById('caixa-senha1');
 const msg5 = document.getElementById('caixa-senha2');
 const msg6 = document.getElementById('caixa-senha3');
 
-const btnProxima = document.getElementById('btn-ok');
 
 
 
+/*    CARREGAR PAGINA   */
 function mostrarMensagens() {
     msg1.style.display = "flex"; // mostra a primeira
     msg1.classList.add('mostrar');
@@ -114,7 +140,15 @@ function mostrarMensagens() {
         msg1.style.display = "none"; // esconde a primeira
         msg2.style.display = "flex"; // mostra a segunda
         msg2.classList.add('mostrar');
+    setTimeout(() => {
+       
+      msg2.style.display = "none"; // esconde a primeira
+    
+    }, 5000);
+    
     }, 4000); // tempo que a primeira fica visível (4 segundos)
+    
+
 }
 
 
@@ -129,47 +163,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// SENHA 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-function mostrarMensagens() {
-    msg1.style.display = "flex";
-    msg1.classList.add('mostrar');
+function mostrarMensagens1() {
+    msg4.style.display = "flex";
+    msg4.classList.add('mostrar');
 
     setTimeout(() => {
-        msg1.classList.remove('mostrar');
-        msg1.style.display = "none";
+        msg4.classList.remove('mostrar');
+        msg4.style.display = "none";
 
-        msg2.style.display = "flex";
-        msg2.classList.add('mostrar');
+        msg5.style.display = "flex";
+        msg5.classList.add('mostrar');
 
         setTimeout(() => {
-            msg2.classList.remove('mostrar');
-            msg2.style.display = "none";
+            msg5.classList.remove('mostrar');
+            msg5.style.display = "none";
 
-            msg3.style.display = "flex";
-            msg3.classList.add('mostrar');
+            msg6.style.display = "flex";
+            msg6.classList.add('mostrar');
 
             setTimeout(() => {
-                msg3.classList.remove('mostrar');
-                msg3.style.display = "none";
-
-                msg4.style.display = "flex";
-                msg4.classList.add('mostrar');
-
-                btnProxima.style.display = "block";
-               
+                msg6.classList.remove('mostrar');
+                msg6.style.display = "none";
 
                 
                    // Aqui você pode adicionar o que deve acontecer após a última mensagem
@@ -178,15 +195,23 @@ function mostrarMensagens() {
        }, 5000);
     }
 
+btnsenha.addEventListener('click', mostrarMensagens1);
 
 
 
 
 
+/*    COFRE   */
+function mostrarMensagens2() {
+    msg3.style.display = "flex"; // mostra a primeira
+    msg3.classList.add('mostrar');
 
+    setTimeout(() => {
+        msg3.style.display = "none"; // esconde a primeira
+    }, 5000);
+}
 
-
-
+btncofre.addEventListener('click', mostrarMensagens2);
 
 
 
@@ -248,4 +273,65 @@ function mostrarMensagens() {
         .senha:hover{
             transform: translate(-50%, -50%) scale(4.5);
         }
+
+
+
+
+
+
+
+
+         .bg {
+      background-image: url('./img/cofre.png');
+  background-size: cover;
+  width: 800px;
+  height: 800px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: 22%;
+  margin-top: -3%;
+    }
+    
+    .codigo {
+      background-image: url('./img/.png');
+    background-size: cover; /* Faz a imagem ocupar a tela inteira */
+      position: absolute;
+            transform: translate(-50%, -50%);
+            width: 280px;
+            height: 60px;
+            transition: transform 0.3s ease;
+    }
+      .codigo {
+            top: 30%;
+            left: 52%;
+        }
+
+      .form1 {
+      padding: 20px 30px;
+    margin-top: 260px;
+      text-align: center;
+      margin-left: 50px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      margin: 10px 0;
+      width: 200px;
+    }
+
+    .enviar {
+      padding: 40px 110px;
+      border: none;
+      border-radius: 6px;
+      opacity: 100%;
+    background: none
+     cursor: pointer;
+      margin-top: 80px;
+
+    }
+
 </style>

@@ -15,6 +15,7 @@ if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
     $_SESSION['permitido5'] = true;
     $_SESSION['permitido6'] = true;
     $_SESSION['permitido7'] = true;
+    $_SESSION['permitido8'] = true;
 
     header("Location: dialogoclaudio.php"); // manda direto
     exit;

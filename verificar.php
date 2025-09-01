@@ -11,4 +11,10 @@ if(strtolower(trim($resposta)) === strtolower($resposta_correta)){
 } else {
     echo json_encode(['sucesso' => false]);
 }
+
+
+
+
+
+
 ?>
