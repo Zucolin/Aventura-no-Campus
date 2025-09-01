@@ -102,7 +102,7 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
   <form class="form1" action="verificar.php" method="POST">
     <label for="resposta">Digite a resposta:</label><br>
     <input  placeholder="1,4,12,  ,  " type="text" id="resposta" name="resposta" required><br>
-    <button value="ok7" class="enviar" type="submit">Enviar</button>
+    <button value="ok7" class="enviar" type="submit">Abrir</button>
   </form>
 </div>
 
@@ -118,14 +118,14 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
     <span class="msg-text">
         VITOR: **Vamo embora daqui**
     </span>
-</div>
+
 
 <form method="post" action="passou.php" >
     <button id="btn-laboratorio" name="acesso9" value="ok9" class="btn-laboratorio" style="display:none;">
         Ir Embora ->
     </button>
 </form>
-
+</div>
 
 <script> 
 
