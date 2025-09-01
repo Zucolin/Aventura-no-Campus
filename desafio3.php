@@ -392,7 +392,7 @@ form.addEventListener('submit', function(e){
   position: fixed;
   top: 0;
   left: 0;
-  display: block;
+  display: none;
   
 
     }
