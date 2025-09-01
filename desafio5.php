@@ -96,37 +96,61 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 
 
 
-
 <div class="bg">
+  <button id="fecharBg" class="btn-fechar">X</button>
   <div class="codigo"></div>
   <form class="form1" action="verificar.php" method="POST">
-    <label for="resposta">Digite a Senha:</label><br>
-    <input type="text" id="resposta" name="resposta" required><br>
+    <label for="resposta">Digite a resposta:</label><br>
+    <input  placeholder="1,4,12,  ,  " type="text" id="resposta" name="resposta" required><br>
     <button value="ok7" class="enviar" type="submit">Enviar</button>
   </form>
 </div>
 
+<div id="caixa-mensagem4" class="mensagem-vitor">
+    <span class="msg-avatar2"></span>
+    <span class="msg-text">
+        VITOR: **Não acredito que consegui, essa foi difícil, devo aprestar mais atenção nas aulas de Katia**
+    </span>
+</div>
 
+<div id="caixa-mensagem5" class="mensagem-vitor">
+    <span class="msg-avatar2"></span>
+    <span class="msg-text">
+        VITOR: **Vamo embora daqui**
+    </span>
+</div>
 
+<form method="post" action="passou.php" >
+    <button id="btn-laboratorio" name="acesso9" value="ok9" class="btn-laboratorio" style="display:none;">
+        Ir Embora ->
+    </button>
+</form>
 
 
 <script> 
 
 const btnsenha = document.getElementById('btn-senha');
 const btncofre = document.getElementById('btn-cofre');
+const btnProxima = document.getElementById('btn-laboratorio');
 
 
 //   CARREGAR PAGINA
 const msg1 = document.getElementById('caixa-mensagem1');
 const msg2 = document.getElementById('caixa-mensagem2');
 
+
 //    COFRE   
 const msg3 = document.getElementById('caixa-cofre');
+const bg = document.querySelector('.bg');
+const fecharBtn = document.getElementById('fecharBg');
 
 //    SENHA
 const msg4 = document.getElementById('caixa-senha1');
 const msg5 = document.getElementById('caixa-senha2');
 const msg6 = document.getElementById('caixa-senha3');
+
+const msg7 = document.getElementById('caixa-mensagem4');
+const msg8 = document.getElementById('caixa-mensagem5');
 
 
 
@@ -208,11 +232,57 @@ function mostrarMensagens2() {
 
     setTimeout(() => {
         msg3.style.display = "none"; // esconde a primeira
-    }, 5000);
+        bg.style.display = "block"; // mostra o cofre  
+        }, 5000);
 }
 
 btncofre.addEventListener('click', mostrarMensagens2);
 
+fecharBtn.addEventListener('click', () => {
+  bg.style.display = 'none';
+});
+
+
+
+
+const form2 = document.querySelector('.bg form'); 
+form2.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const resposta = document.getElementById('resposta').value;
+
+    fetch('verificar2.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `resposta=${encodeURIComponent(resposta)}`
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.sucesso){
+            document.querySelector('.bg').style.display = 'none';
+
+            // AQUI começa pela msg7
+            msg7.style.display = 'flex';
+            msg7.classList.add('mostrar');
+
+            setTimeout(() => {
+                msg7.style.display = 'none';
+                msg8.style.display = 'flex';
+                msg8.classList.add('mostrar');
+
+                setTimeout(() => {
+                    msg8.style.display = 'none';
+                
+                    btnProxima.style.display = "block";
+                }, 5000);
+
+            }, 5000);
+
+        } else {
+            alert("Senha incorreta! Tente novamente.");
+        }
+    });
+});
 
 
 
@@ -248,6 +318,7 @@ btncofre.addEventListener('click', mostrarMensagens2);
             width: 150px;
             height: auto;
             transition: transform 0.3s ease;
+            position: fixed;
 
         }
         
@@ -259,7 +330,8 @@ btncofre.addEventListener('click', mostrarMensagens2);
 
         .senha {
             top: 45%;
-            left: 70%;
+            left: 80%;
+            position: fixed;
         }
 
         .cofre {
@@ -286,10 +358,10 @@ btncofre.addEventListener('click', mostrarMensagens2);
   background-size: cover;
   width: 800px;
   height: 800px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  display: block;
+  display: none;
   margin-left: 22%;
   margin-top: -3%;
     }
@@ -333,5 +405,38 @@ btncofre.addEventListener('click', mostrarMensagens2);
       margin-top: 80px;
 
     }
+    .btn-fechar {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
 
+
+   
+        .btn-laboratorio {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+            margin: 3000px auto;  
+            display: block;      
+            position: fixed;  
+            margin-top: 50px;
+        }
+
+        .btn-laboratorio:hover {
+            background-color: #2980b9;
+       }
 </style>

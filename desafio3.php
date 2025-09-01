@@ -225,6 +225,9 @@ btnfabio.addEventListener('click', mostrarMensagens);
 form.addEventListener('submit', function(e){
     e.preventDefault(); // evita o reload da página
 
+   
+   
+   
     const resposta = document.getElementById('resposta').value;
 
     fetch('verificar.php', {
@@ -385,7 +388,7 @@ form.addEventListener('submit', function(e){
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
+  display: block;
   
 
     }

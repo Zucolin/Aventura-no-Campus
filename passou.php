@@ -74,6 +74,16 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok1') {
     header("Location: desafio5.php");
     exit;
 
+     //botão acesso9
+} elseif (isset($_POST['acesso9']) && $_POST['acesso9'] === 'ok9') {
+    $_SESSION['permitido8'] = true;
+    header("Location: final.php");
+    exit;
+
+ 
+ 
+ 
+ 
     // Nenhum botão correto
 } else {
     header("Location: dialogoclaudio.php");
