@@ -14,6 +14,7 @@ if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
     $_SESSION['permitido4'] = true;
     $_SESSION['permitido5'] = true;
     $_SESSION['permitido6'] = true;
+    $_SESSION['permitido7'] = true;
 
     header("Location: dialogoclaudio.php"); // manda direto
     exit;
@@ -25,13 +26,13 @@ if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
 
 
 // Botão acesso1
-if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok') {
+if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok1') {
     $_SESSION['permitido1'] = true;
     header("Location: desafio1.php");
     exit;
 
 // Botão acesso2
-} elseif (isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok1') {
+} elseif (isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') {
     $_SESSION['permitido2'] = true;
     header("Location: meio-1.php");
     exit;
@@ -63,9 +64,14 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok') {
          //botão acesso7
 } elseif (isset($_POST['acesso7']) && $_POST['acesso7'] === 'ok7') {
     $_SESSION['permitido7'] = true;
-    header("Location: parabens.php");
+    header("Location: desafio4.php");
     exit;
 
+    //botão acesso8
+} elseif (isset($_POST['acesso8']) && $_POST['acesso8'] === 'ok8') {
+    $_SESSION['permitido8'] = true;
+    header("Location: desafio5.php");
+    exit;
 
     // Nenhum botão correto
 } else {

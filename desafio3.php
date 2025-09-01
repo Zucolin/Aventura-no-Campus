@@ -87,7 +87,7 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
     
     <div id="caixa-mensagem3" class="mensagem-fabio">
         <div class="msg-avatar2"></div>
-        <span class="msg-text">VITOR: Beleza deixa eu ver um negocio aqui <br>       ** ABRA O INVENTARIO **</span>
+        <span class="msg-text">VITOR: Beleza deixa eu ver um negocio aqui> <br><span style="color: yellow; display: block;">** ABRA O INVENTARIO, LOGO A BAIXO**</span></span>
     </div>
 
     <div id="caixa-mensagem4" class="mensagem-fabio">
@@ -98,18 +98,12 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
     <div id="caixa-mensagem5" class="mensagem-fabio">
         <span class="msg-avatar2"></span>
         <span class="msg-text">VITOR: Hhummmm.. Vamos dar uma olhada nisso!!  </span>
-     <form action="passou.php" method="post">
-    <button id="btn-proxima-fase" type="submit" name="acesso7" value="ok7" style="display:none;">
-        Ok
-    </button>
-</form>
-    
     </div>
 
 
  <div class="bg">
   <div class="codigo"></div>
-  <form action="verificar.php" method="POST">
+  <form class="form1" action="verificar.php" method="POST">
     <label for="resposta">Digite a resposta:</label><br>
     <input type="text" id="resposta" name="resposta" required><br>
     <button value="ok7" class="enviar" type="submit">Enviar</button>
@@ -129,7 +123,12 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
     <div id="caixa-mensagem8" class="mensagem-fabio">
         <span class="msg-avatar5"></span>
         <span class="msg-text">FABIO: É uma facada nas costas isso, Poder deixar que daqui resolvo, VLW Vitor!!! </span>
-    
+    <form action="passou.php" method="post">
+    <button id="btn-proxima-fase" type="submit" name="acesso7" value="ok7" style="display:none;">
+        Ok
+    </button>
+</form>
+
     </div>
 
 
@@ -149,6 +148,8 @@ const msg6 = document.getElementById('caixa-mensagem6');
 const msg7 = document.getElementById('caixa-mensagem7');
 const msg8 = document.getElementById('caixa-mensagem8');
 const bg = document.querySelector('.bg');
+const btnProxima = document.getElementById('btn-proxima-fase');
+
 
   
     btnLivro.addEventListener("click", () => {
@@ -166,6 +167,13 @@ const bg = document.querySelector('.bg');
     });
   
   
+
+
+
+
+
+
+
   
   
  function mostrarMensagens() {
@@ -204,7 +212,7 @@ const bg = document.querySelector('.bg');
 
             }, 5000); // tempo da terceira mensagem
 
-        }, 5000); // tempo da segunda mensagem
+        }, 8000); // tempo da segunda mensagem
 
     }, 5000); // tempo da primeira mensagem
 }
@@ -241,6 +249,8 @@ form.addEventListener('submit', function(e){
                     msg7.style.display = 'none';
                     msg8.style.display = 'flex';
                     msg8.classList.add('mostrar');
+
+                     btnProxima.style.display = "block";
                 }, 5000);
             }, 5000);
 
@@ -399,10 +409,9 @@ form.addEventListener('submit', function(e){
 
 
 
-      form {
-      
+      .form1 {
       padding: 20px 30px;
-      margin-top: 250px;
+    margin-top: 260px;
       text-align: center;
       margin-left: 50px;
     }
@@ -425,6 +434,29 @@ form.addEventListener('submit', function(e){
       margin-top: 80px;
 
     }
+
+
+
+
+
+
+
+     #btn-proxima-fase {
+    margin: 20px auto;
+    display: none; /* inicial escondido */
+    background: #ffffffff;
+    color: black;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+#btn-proxima-fase.mostrar {
+    display: block;
+    opacity: 1;
+}
 
    
 </style>

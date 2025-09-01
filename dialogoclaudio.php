@@ -90,7 +90,51 @@
    
    
    
-   
+   .tv-falha {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  mix-blend-mode: screen;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tv-falha::before,
+.tv-falha::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.1) 0px,
+    rgba(255,255,255,0.1) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: glitchMove 0.2s infinite;
+}
+
+.tv-falha::after {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,255,0.15) 0px,
+    rgba(0,255,255,0.15) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: glitchMove 0.15s infinite reverse;
+}
+
+@keyframes glitchMove {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-4px); }
+}
+
    
    
    </style>
@@ -110,6 +154,7 @@
     <input type="hidden" name="codigo_secreto" value="liberar">
 </form>
 
+<div class="tv-falha"></div>
 
 
 
@@ -167,7 +212,7 @@
     </span>
 
     <form action="passou.php" method="post">
-        <button id="btn-ok" class="btn-ok" name="acesso1" type="submit" value="ok" style="margin-left:16px;">
+        <button id="btn-ok" class="btn-ok" name="acesso1" type="submit" value="ok1" style="margin-left:16px;">
             OK
         </button>
     </form>
