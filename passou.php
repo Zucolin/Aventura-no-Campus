@@ -81,9 +81,6 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok1') {
     exit;
 
  
- 
- 
- 
     // Nenhum botão correto
 } else {
     header("Location: dialogoclaudio.php");

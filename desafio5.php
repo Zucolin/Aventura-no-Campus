@@ -13,7 +13,7 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <link rel="stylesheet" href="Caixa-dialogo.css">
+<link rel="stylesheet" href="Caixa-dialogo.css">
 <link rel="stylesheet" href="responsivo.css">
    
 
@@ -249,6 +249,8 @@ const form2 = document.querySelector('.bg form');
 form2.addEventListener('submit', function(e){
     e.preventDefault();
 
+    
+    
     const resposta = document.getElementById('resposta').value;
 
     fetch('verificar2.php', {
@@ -259,6 +261,14 @@ form2.addEventListener('submit', function(e){
     .then(res => res.json())
     .then(data => {
         if(data.sucesso){
+            // --- INICIO ADIÇÃO DE PONTOS ---
+            fetch('pontuar.php?pontos=100') // soma 10 pontos
+                .then(res => res.json())
+                .then(pontosData => {
+                    console.log("Pontuação atual:", pontosData.pontuacao);
+                });
+            // --- FIM ADIÇÃO DE PONTOS ---
+
             document.querySelector('.bg').style.display = 'none';
 
             // AQUI começa pela msg7
@@ -272,7 +282,6 @@ form2.addEventListener('submit', function(e){
 
                 setTimeout(() => {
                     msg8.style.display = 'none';
-                
                     btnProxima.style.display = "block";
                 }, 5000);
 
@@ -283,6 +292,7 @@ form2.addEventListener('submit', function(e){
         }
     });
 });
+
 
 
 

@@ -9,11 +9,13 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="stylesheet" href="Caixa-dialogo.css">
+<link rel="stylesheet" href="Caixa-dialogo.css">
 <link rel="stylesheet" href="responsivo.css">
+
 
 
 <meta charset="UTF-8">
