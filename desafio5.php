@@ -121,6 +121,7 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 
 
 <form method="post" action="passou.php" >
+    <input type="hidden" name="acao" value="ganhar">
     <button id="btn-laboratorio" name="acesso9" value="ok9" class="btn-laboratorio" style="display:none;">
         Ir Embora ->
     </button>

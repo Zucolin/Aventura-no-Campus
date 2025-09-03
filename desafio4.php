@@ -69,6 +69,7 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
 
 
     <form action="passou.php" method="post">
+        <input type="hidden" name="acao" value="ganhar">
         <button id="btn-ok" class="btn-ok" name="acesso8" type="submit" value="ok8" style="margin-left:16px;">
             OK
         </button>

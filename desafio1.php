@@ -147,10 +147,13 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
         <span class="msg-avatar2"></span>
         <span class="msg-text">Fui mais que obrigado né!!!</span>
 
-      <form action="passou.php" method="post">
+     <form action="passou.php" method="post">
+    <input type="hidden" name="acao" value="ganhar">
     <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok2">
        OK
     </button>
+</form>
+
 </form>
 
     </div>

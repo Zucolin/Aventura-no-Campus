@@ -2,7 +2,37 @@
 session_start();
 
 
+// Inicializa pontuação se não existir
+if (!isset($_SESSION['pontos'])) {
+    $_SESSION['pontos'] = 0; // por exemplo
+}
 
+// Inicializa tempo de início da fase, se ainda não existe
+if (!isset($_SESSION['inicio_fase'])) {
+    $_SESSION['inicio_fase'] = time(); // timestamp atual
+}
+
+// Calcula quantos segundos passaram desde que começou o desafio
+$tempo_passado = time() - $_SESSION['inicio_fase'];
+
+// Subtrai 1 ponto por segundo
+$_SESSION['pontos'] -= $tempo_passado;
+
+// Não deixar negativo
+if ($_SESSION['pontos'] < 0) {
+    $_SESSION['pontos'] = 0;
+}
+
+// Atualiza o timestamp para que não perca pontos duplicados se o jogador clicar de novo
+$_SESSION['inicio_fase'] = time();
+
+// Se clicou no OK para liberar próxima fase
+if (isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') {
+    // Se quiser adicionar ponto por acerto
+    if (isset($_POST['acao']) && $_POST['acao'] === 'ganhar') {
+        $_SESSION['pontos'] += 100; // soma 100 pontos por acerto
+    }
+}
 
 
 

@@ -23,12 +23,15 @@ $_SESSION['passou_biblioteca'] = true;
     <title>Desafio 2</title>
 </head>
 <body>
-   
 
+<form method="post" action="passou.php">
+    <input type="hidden" name="acao" value="ganhar">
 <a href="meio-1.php" class="btn-voltar">← Voltar</a>
 
+</form>
 
-  <!-- Personagens -->
+
+<!-- Personagens -->
  <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
         <img src="img/protagonista.png" alt="Vitor" style="width:60px;height:auto;display:block;">
     </button>

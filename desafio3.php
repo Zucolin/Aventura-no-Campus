@@ -124,6 +124,7 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
         <span class="msg-avatar5"></span>
         <span class="msg-text">FABIO: É uma facada nas costas isso, Poder deixar que daqui resolvo, VLW Vitor!!! </span>
     <form action="passou.php" method="post">
+      <input type="hidden" name="acao" value="ganhar">
     <button id="btn-proxima-fase" type="submit" name="acesso7" value="ok7" style="display:none;">
         Ok
     </button>
