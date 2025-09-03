@@ -26,11 +26,16 @@ if ($_SESSION['pontos'] < 0) {
 // Atualiza o timestamp para que não perca pontos duplicados se o jogador clicar de novo
 $_SESSION['inicio_fase'] = time();
 
-// Se clicou no OK para liberar próxima fase
-if (isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') {
-    // Se quiser adicionar ponto por acerto
-    if (isset($_POST['acao']) && $_POST['acao'] === 'ganhar') {
-        $_SESSION['pontos'] += 100; // soma 100 pontos por acerto
+if ((isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') ||
+    (isset($_POST['acesso3']) && $_POST['acesso3'] === 'ok3') ||
+    (isset($_POST['acesso4']) && $_POST['acesso4'] === 'ok4') ||
+    (isset($_POST['acesso5']) && $_POST['acesso5'] === 'ok5') ||
+    (isset($_POST['acesso6']) && $_POST['acesso6'] === 'ok6') ||
+    (isset($_POST['acesso7']) && $_POST['acesso7'] === 'ok7') ||
+    (isset($_POST['acesso8']) && $_POST['acesso8'] === 'ok8') ||
+    (isset($_POST['acesso9']) && $_POST['acesso9'] === 'ok9')) {
+ if (isset($_POST['acao']) && $_POST['acao'] === 'ganhar') {
+        $_SESSION['pontos'] += 200; // soma pontos
     }
 }
 
