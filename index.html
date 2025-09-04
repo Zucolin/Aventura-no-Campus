@@ -7,7 +7,13 @@
   <link rel="stylesheet" href="responsivo.css">
 </head>
 <body class="pagina-index">
-    <a href="dialogoclaudio.php"><img id="btn-iniciar" src="img/iniciar.png" alt="Iniciar Jogo"></a>
+  
+  
+  <a href="dialogoclaudio.php"><img id="btn-iniciar" src="img/iniciar.png" alt="Iniciar Jogo"></a>
+
+  <a href="tutorial.html"><img id="btn-tutorial" src="img/tutorial.png" alt="Tutorial"></a>
+
+
 </body>
 </html>
 
@@ -27,6 +33,12 @@ body {
     }
 
     #btn-iniciar {
+     position: absolute;
+            
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s ease;
+            position: fixed;
       cursor: pointer;
       image-rendering: pixelated;
       image-rendering: crisp-edges;
@@ -37,5 +49,32 @@ body {
     #btn-iniciar:hover {
       transform: scale(1.2);
     }
+    #btn-tutorial:hover{
+       transform: scale(1.2);
+    }
+
+
+ #btn-tutorial {
+      position: absolute;
+           
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s ease;
+            position: fixed;
+             cursor: pointer;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      width: 300px; /* ajuste conforme o tamanho da sua arte */
+      transition: transform 0.3s ease-in-out;
+    }
+#btn-tutorial {
+  left: 40%;
+  top: 55%;
+}
+#btn-iniciar{
+  left: 40%;
+  top: 40%;
+}
+
 
     </style>

@@ -15,7 +15,6 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 <head>
 <link rel="stylesheet" href="Caixa-dialogo.css">
 <link rel="stylesheet" href="responsivo.css">
-   
 
 
 <meta charset="UTF-8">
@@ -23,6 +22,18 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
     <title>Document</title>
 </head>
 <body>
+
+
+
+
+<div class="vinheta">
+  <p style="color:white; font-size:24px;"></p>
+</div>
+
+
+<div class="tv-falha"></div>
+
+
     
  <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
         <img src="img/protagonista.png" alt="Vitor" style="width:80px;height:auto;display:block;">
@@ -40,12 +51,11 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 
 
 
-
 <!-- Caixa do Vitor -->
 <div id="caixa-mensagem1" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: **vou pegar o que é meu, agora**
+        VITOR: **Vou pegar o que é meu agora**
     </span>
 </div>
 
@@ -63,7 +73,7 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 <div id="caixa-cofre" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: **Nossa um cofre!!, Meu  celular deve estar aqui dentro**
+        VITOR: **Meu  celular deve estar aqui dentro do cofre**
     </span>
 </div>
 
@@ -74,21 +84,21 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 <div id="caixa-senha1" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: **Interessante.. deve ser a senha do cofre, parece faltar dois números**
+        VITOR: **Interessante... Deve ser a senha do cofre, parece faltar dois números**
     </span>
 </div>
 
 <div id="caixa-senha2" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: **Só de bater o olho percebo ter uma sequencia logica de numeros aqui**
+        VITOR: **Só de bater o olho percebo ter uma sequência lógica de números aqui**
     </span>
 </div>
 
 <div id="caixa-senha3" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: **Só me resta tentar descobrir isso, diria que deve ter uma mistura de "P.G" e de "P.A"**
+        VITOR: **Só me resta tentar descobrir isso, diria que tem uma mistura de "P.G" e de "P.A"**
     </span>
 </div>
 
@@ -109,30 +119,30 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 <div id="caixa-mensagem4" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: **Não acredito que consegui, essa foi difícil, devo aprestar mais atenção nas aulas de Katia**
+        VITOR: **Não acredito que consegui, essa foi difícil, devo prestar mais atenção nas aulas de Kátia**
     </span>
 </div>
 
 <div id="caixa-mensagem5" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: **Vamo embora daqui**
+        VITOR: **Vamos embora daqui**
     </span>
-
+</div>
 
 <form method="post" action="passou.php" >
     <input type="hidden" name="acao" value="ganhar">
-    <button id="btn-laboratorio" name="acesso9" value="ok9" class="btn-laboratorio" style="display:none;">
+    <button id="btn-sair" name="acesso9" value="ok9" class="btn-sair">
         Ir Embora ->
     </button>
 </form>
-</div>
+
 
 <script> 
 
 const btnsenha = document.getElementById('btn-senha');
 const btncofre = document.getElementById('btn-cofre');
-const btnProxima = document.getElementById('btn-laboratorio');
+const btnProxima = document.getElementById('btn-sair');
 
 
 //   CARREGAR PAGINA
@@ -283,7 +293,12 @@ form2.addEventListener('submit', function(e){
 
                 setTimeout(() => {
                     msg8.style.display = 'none';
-                    btnProxima.style.display = "block";
+                btnProxima.style.display = "block";
+                setItemTimeout(() => {
+                    
+
+                }, 5000);
+                
                 }, 5000);
 
             }, 5000);
@@ -431,23 +446,81 @@ form2.addEventListener('submit', function(e){
 }
 
 
-   
-        .btn-laboratorio {
-            display: inline-block;
-            padding: 15px 25px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 8px;
-            transition: 0.3s;
-            margin: 3000px auto;  
-            display: block;      
-            position: fixed;  
-            margin-top: 50px;
-        }
+   .btn-sair {
+   display: none;
+    padding: 15px 25px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-        .btn-laboratorio:hover {
+
+        .btn-sair:hover {
             background-color: #2980b9;
        }
+
+
+
+
+
+        .tv-falha {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  mix-blend-mode: screen;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tv-falha::before,
+.tv-falha::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.52) 20px,
+    rgba(255,255,255,0.1) 2px,
+    transparent 2px,
+    transparent 150px
+  );
+  animation: glitchMove 0.2s infinite;
+}
+
+.tv-falha::after {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(5, 76, 217, 0.84) 0px,
+    rgba(0, 255, 255, 0.3) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: glitchMove 0.15s infinite reverse;
+}
+
+@keyframes glitchMove {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-2px); }
+}
+
+.vinheta {
+  width: 1600px;
+  height: 800px;
+  background: url('sua-imagem.jpg') center/cover no-repeat;
+  box-shadow: inset 0 0 150px rgba(0,0,0,0.8);
+  position: fixed;
+}
+
 </style>

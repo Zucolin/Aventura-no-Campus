@@ -24,24 +24,24 @@ $_SESSION['passou_biblioteca'] = true;
 </head>
 <body>
 
-<form method="post" action="passou.php">
+<form  method="post" action="passou.php">
     <input type="hidden" name="acao" value="ganhar">
-<a href="meio-1.php" class="btn-voltar">← Voltar</a>
+<a id="voltar" href="meio-1.php" class="btn-voltar">← Voltar</a>
 
 </form>
 
 
 <!-- Personagens -->
  <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/protagonista.png" alt="Vitor" style="width:60px;height:auto;display:block;">
+        <img src="img/protagonista.png" alt="Vitor" style="width:80px;height:auto;display:block;">
     </button>
 
     <button id="btn-juliana" class="personagem-juliana" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/juliana.png" alt="Juliana" style="width:90px;height:auto;display:block;">
+        <img src="img/juliana.png" alt="Juliana" style="width:130px;height:auto;display:block;">
     </button>
 
  <button id="btn-livro-misterio" class="livro-misterio" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/livro-qr.png" alt="Livro-misterioso" style="width:10px; ">
+        <img src="img/livro-qr.png" alt="Livro-misterioso" style="width:30px; ">
     </button>
 
 
@@ -53,12 +53,12 @@ $_SESSION['passou_biblioteca'] = true;
 
     <div id="caixa-mensagem2" class="mensagem-vitor">
         <div class="msg-avatar2"></div>
-        <span class="msg-text">VITOR: Eu não faço amor com livros, vim procurar pelo livro do Celso</span>
+        <span class="msg-text">VITOR: Não, vim procurar pelo livro do Celso</span>
     </div>
 
     <div id="caixa-mensagem3" class="mensagem-juliana">
         <span class="msg-avatar4"></span>
-        <span class="msg-text">JULIANA: Tudo bem. procure passando o Mouse pelas prateleiras </span>
+        <span class="msg-text">JULIANA: Tudo bem. Procure passando o Mouse pelas prateleiras </span>
     </div>
 
 
@@ -73,7 +73,7 @@ $_SESSION['passou_biblioteca'] = true;
 
     <div id="caixa-mensagem5" class="mensagem-vitor">
         <div class="msg-avatar4"></div>
-        <span class="msg-text">JULIANA:  Nossa que estranho, nunca tinha visto</span>
+        <span class="msg-text">JULIANA:  Nossa que estranho, nunca tinha visto esse livro por aqui!!</span>
     </div>
 
     <div id="caixa-mensagem6" class="mensagem-renato">
@@ -104,6 +104,7 @@ const msg1 = document.getElementById('caixa-mensagem1');
 const msg2 = document.getElementById('caixa-mensagem2');
 const msg3 = document.getElementById('caixa-mensagem3');
 
+
 btnJuliana.addEventListener('click', () => {
     // Mostra a primeira
     msg1.classList.add('mostrar');
@@ -117,11 +118,11 @@ btnJuliana.addEventListener('click', () => {
             msg3.classList.add('mostrar');
        setTimeout(() => {
                 msg3.classList.remove('mostrar');
-            }, 6000); // tempo da terceira mensagem
+            }, 8000); // tempo da terceira mensagem
        
-        }, 4000); // tempo da segunda mensagem
+        }, 6000); // tempo da segunda mensagem
 
-    }, 4000); // tempo da primeira mensagem
+    }, 5000); // tempo da primeira mensagem
 });
 
 
@@ -130,6 +131,7 @@ const msg7 = document.getElementById('caixa-mensagem7'); // nova
 const msg4 = document.getElementById('caixa-mensagem4');
 const msg5 = document.getElementById('caixa-mensagem5');
 const msg6 = document.getElementById('caixa-mensagem6');
+const vlt = document.getElementById('voltar');
 
 btnLivro.addEventListener('click', () => {
     // Mostra a msg7 primeiro
@@ -149,12 +151,14 @@ btnLivro.addEventListener('click', () => {
 
                 setTimeout(() => {
                     msg6.classList.remove('mostrar');
+                vlt.style.display = 'block';
+
                 }, 6000); // tempo da última msg
-            }, 4000); // msg5
+            }, 6000); // msg5
 
-        }, 4000); // msg4
+        }, 7000); // msg4
 
-    }, 4000); // msg7
+    }, 5000); // msg7
 });
 
  </script>
@@ -200,12 +204,12 @@ btnLivro.addEventListener('click', () => {
         }
 
         .livro-misterio {
-            top: 82%;
-            left: 82%;
+            top: 55%;
+            left: 62%;
         }
        
        .livro-misterio:hover {
-            transform: translate(-50%, -50%) scale(20.3);
+            transform: translate(-50%, -50%) scale(10.3);
             opacity: 100%;
        }
        
@@ -217,14 +221,14 @@ btnLivro.addEventListener('click', () => {
         .personagem-vitor {
             position: absolute;
             transform: translate(-50%, -50%);
-            width: 100px;
+            width: 150px;
             height: auto;
             transition: transform 0.3s ease;
         }
         .personagem-juliana {
             top: 40%;
             left: 25%;
-            transform: scaleX(-1);
+            transform: scaleX(1);
             transition: transform 0.3s ease;
         }
         .personagem-vitor {

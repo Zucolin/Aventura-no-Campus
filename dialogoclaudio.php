@@ -34,7 +34,7 @@
        
        
           .personagem-claudio:hover {
-              transform: translate(-50%, -50%) scale(1.3);
+              transform: translate(-50%, -50%) scale(1.5);
           }
        
        
@@ -111,10 +111,10 @@
   height: 100%;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(255,255,255,0.1) 0px,
+    rgba(255, 255, 255, 0.11) 0px,
     rgba(255,255,255,0.1) 2px,
     transparent 2px,
-    transparent 4px
+    transparent 150px
   );
   animation: glitchMove 0.2s infinite;
 }
@@ -122,8 +122,8 @@
 .tv-falha::after {
   background: repeating-linear-gradient(
     to bottom,
-    rgba(0,255,255,0.15) 0px,
-    rgba(0,255,255,0.15) 2px,
+    rgba(0, 0, 255, 0.22) 0px,
+    rgba(0, 255, 255, 0.3) 2px,
     transparent 2px,
     transparent 4px
   );
@@ -132,7 +132,7 @@
 
 @keyframes glitchMove {
   from { transform: translateY(0); }
-  to   { transform: translateY(-4px); }
+  to   { transform: translateY(-2px); }
 }
 
    
@@ -184,7 +184,7 @@
 <div id="caixa-mensagem2" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: Calma ai Claudio! Eu só estava vendo o horário da aula.
+        VITOR: Calma aí Claudio! Eu só estava vendo o horário da aula.
     </span>
 </div>
 
@@ -200,7 +200,7 @@
 <div id="caixa-mensagem4" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: Vai me devolver depois meu dispositvo portatil telefone celular?
+        VITOR: Vai me devolver o celular depois?
     </span>
 </div>
 
@@ -208,7 +208,7 @@
 <div id="caixa-mensagem5" class="mensagem-claudio">
     <span class="msg-avatar1"></span>
     <span class="msg-text">
-        CLAUDIO: Vá ajudar o Renato que penso no seu caso!!!
+        CLAUDIO: Vá ajudar o Renato que eu penso no seu caso!!!
     </span>
 
     <form action="passou.php" method="post">
@@ -250,10 +250,10 @@ const btnPersonagem = document.getElementById('btn-personagem');
                         setTimeout(() => {
                             btnOk.style.display = "inline-block"; // aparece no fim
                         }, 2000); // espera antes do botão aparecer
-                    }, 4000); // tempo da quarta mensagem
-                }, 4000); // tempo da terceira mensagem
-            }, 4000); // tempo da segunda mensagem
-        }, 4000); // tempo da primeira mensagem
+                    }, 5000); // tempo da quarta mensagem
+                }, 5000); // tempo da terceira mensagem
+            }, 5000); // tempo da segunda mensagem
+        }, 5000); // tempo da primeira mensagem
     });
 
     btnOk.addEventListener('click', () => {

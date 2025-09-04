@@ -27,8 +27,9 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
 
 
 <div style="background:none; color: red; width:100px; height:100px; border-radius:8px; 
-            position:absolute; top:85%; left:50.4%; transform:translate(-50%,-50%);">
-<p><STRONG>BLOQUEADO</STRONG></p>
+            position:absolute; top:85%; left:47.4%; transform:translate(-50%,-50%);">
+<p><STRONG>INVENTÁRIO/BLOQUEADO</STRONG></p>
+
 </div>
 
 <div style="background:rgba(233, 101, 101, 1); width:100px; height:100px; border-radius:8px; 
@@ -56,32 +57,32 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
  <!-- Personagens -->
    
  <button id="btn-livro-celso" class="livro-celso" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/livro-celso.png" alt="Livro-do-Celso" style="width:50px; ">
+        <img src="img/livro-celso.png" alt="Livro-do-Celso" style="width:60px; ">
     </button>
  
  
  <button id="btn-celso" class="personagem-celso" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/Celso.png" alt="Celso" style="width:70px;height:auto;display:block;">
+        <img src="img/Celso.png" alt="Celso" style="width:80px;height:auto;display:block;">
     </button>
 
     <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/protagonista.png" alt="Vitor" style="width:60px;height:auto;display:block;">
+        <img src="img/protagonista.png" alt="Vitor" style="width:70px;height:auto;display:block;">
     </button>
 
 <!-- Mensagens -->
     <div id="caixa-mensagem1" class="mensagem-vitor">
         <span class="msg-avatar2"></span>
-        <span class="msg-text">VITOR: Ae professor ache teu livro aqui</span>
+        <span class="msg-text">VITOR: Eae professor achei teu livro aqui</span>
     </div>
 
     <div id="caixa-mensagem2" class="mensagem-celso">
         <div class="msg-avatar3"></div>
-        <span class="msg-text">CELSO: Otimo, ajude eu aqui rapidinho, porque o Fabio necessita da sua ajuda depois</span>
+        <span class="msg-text">CELSO: Ótimo, ajude eu aqui rapidinho, porque o Fabio necessita da sua ajuda depois</span>
     </div>
 
     <div id="caixa-mensagem3" class="mensagem-vitor">
         <span class="msg-avatar2"></span>
-        <span class="msg-text">VITOR: Denovo.. tão me enxendo de afazeres, é bom vocês me elogiarem pro Claudio!! </span>
+        <span class="msg-text">VITOR: De novo... tão me enchendo de afazeres, é bom vocês me elogiarem pro Claudio!! </span>
     </div>
 
     <div id="caixa-mensagem4" class="mensagem-celso">
@@ -105,8 +106,8 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
     </div>
 
     <div id="caixa-mensagem5" class="mensagem-renato" >
-        <span class="msg-avatar"></span>
-        <span class="msg-text">Bom garoto.. Agora vai que Fabio te espera</span>
+        <span class="msg-avatar3"></span>
+        <span class="msg-text">Bom garoto... Agora vai que Fabio te espera</span>
      
       <form action="passou.php" method="post">
         <input type="hidden" name="acao" value="ganhar">
@@ -170,11 +171,11 @@ function mostrarMensagens() {
 
                 }, 4000); // tempo da msg4
 
-            }, 5000); // tempo da msg3
+            }, 7000); // tempo da msg3
 
-        }, 5000); // tempo da msg2
+        }, 8000); // tempo da msg2
 
-    }, 3000); // tempo da msg1
+    }, 5000); // tempo da msg1
 }
 
 // Ao clicar no livro, inicia a sequência
@@ -259,12 +260,12 @@ btnErrado2.addEventListener('click', () => {
             width: 100px;
             height: auto;
             transition: transform 0.3s ease;
-            opacity: 70%;
+            opacity: 90%;
         }
 
         .livro-celso {
             top: 35%;
-            left: 78%;
+            left: 82%;
         }
        .livro-celso:hover {
             transform: translate(-50%, -50%) scale(2.0);

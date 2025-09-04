@@ -24,6 +24,13 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
 </head>
 <body>
     
+<div class="vinheta">
+  <p style="color:white; font-size:24px;"></p>
+</div>
+<div class="tv-falha"></div>
+
+
+
     <!-- Personagens -->
     <button id="btn-personagem" class="personagem-claudio" style="background: none; border: none; padding: 0;">
         <img src="img/claudio.png" alt="Personagem" style="width: 100px; height: auto; display: block;">
@@ -40,7 +47,7 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
 <div id="caixa-mensagem1" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: Eae Claudio ajudei os professores até fora do horario de aula, me devolve meu celular?
+        VITOR: Eae Claudio ajudei os professores até fora do horário de aula, me devolve meu celular?
     </span>
 </div>
 
@@ -48,7 +55,7 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
 <div id="caixa-mensagem2" class="mensagem-claudio">
     <span class="msg-avatar1"></span>
     <span class="msg-text">
-        CLAUDIO: hahahaha engraçado né, vou entregar sim... Na mão dos seus País
+        CLAUDIO: hahahaha engraçado né? vou entregar sim... Na mão dos seus País
     </span>
 </div>
 
@@ -64,7 +71,7 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
 <div id="caixa-mensagem4" class="mensagem-vitor">
     <span class="msg-avatar2"></span>
     <span class="msg-text">
-        VITOR: Tentei ir pro lado bom Claudio!!
+        VITOR: Tentei ir pelo lado correto, Claudio!!
     </span>
 
 
@@ -193,4 +200,64 @@ btnvitor.addEventListener('click', mostrarMensagens);
         .personagem-vitor:hover {
             transform: translate(-50%, -50%) scale(1.4);
         }
+
+
+
+
+
+
+        
+        .tv-falha {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  mix-blend-mode: screen;
+  z-index: 999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tv-falha::before,
+.tv-falha::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(8, 94, 151, 0.4) 20px,
+    rgba(255,255,255,0.1) 2px,
+    transparent 2px,
+    transparent 150px
+  );
+  animation: glitchMove 0.5s infinite;
+}
+
+.tv-falha::after {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(206, 6, 189, 0.85) 0px,
+    rgba(0, 255, 255, 0.7) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: glitchMove 0.15s infinite reverse;
+}
+
+@keyframes glitchMove {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-2px); }
+}
+
+
+.vinheta {
+  width: 1600px;
+  height: 800px;
+  background: url('sua-imagem.jpg') center/cover no-repeat;
+  box-shadow: inset 0 0 300px rgba(0, 0, 0, 0.89);
+  position: fixed;
+}
 </style>

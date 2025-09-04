@@ -25,11 +25,11 @@ if (!isset($_SESSION['permitido2']) || $_SESSION['permitido2'] !== true) {
    
  <!-- Personagens -->
     <button id="btn-celso" class="personagem-celso" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/Celso.png" alt="Celso" style="width:70px;height:auto;display:block;">
+        <img src="img/Celso.png" alt="Celso" style="width:90px;height:auto;display:block;">
     </button>
 
     <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/protagonista.png" alt="Vitor" style="width:60px;height:auto;display:block;">
+        <img src="img/protagonista.png" alt="Vitor" style="width:80px;height:auto;display:block;">
     </button>
 
 <!-- Mensagens -->
@@ -45,7 +45,7 @@ if (!isset($_SESSION['permitido2']) || $_SESSION['permitido2'] !== true) {
 
     <div id="caixa-mensagem3" class="mensagem-celso">
         <span class="msg-avatar3"></span>
-        <span class="msg-text">CELSO: Queria um livro Mas não sei onde o deixei, procura pra mim e depois me ajude no laboratorio </span>
+        <span class="msg-text">CELSO: Queria um LIVRO Mas não sei onde o deixei, PROCURE pra mim e depois me ajude no laboratorio </span>
     </div>
 
  <div id="caixa-mensagem4" class="mensagem-vitor">
@@ -121,9 +121,9 @@ function mostrarMensagens() {
 
                     // 🔹 Salva checkpoint
                     sessionStorage.setItem("checkpointMeio1", "botoes");
-                }, 3000);
+                }, 4000);
 
-            }, 5000);
+            }, 7000);
 
         }, 5000);
 
@@ -193,9 +193,8 @@ if (sessionStorage.getItem("checkpointMeio1") === "botoes") {
             top: 20%;
             left: 65%;
         }
-         .personagem-celso:hover,
-        .personagem-vitor:hover {
-            transform: translate(-50%, -50%) scale(1.2);
+         .personagem-celso:hover {
+            transform: translate(-50%, -50%) scale(1.4);
         }
         
         

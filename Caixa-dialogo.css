@@ -265,15 +265,6 @@ position: fixed;
 
 
 
-
-
-
-
-
-
-
-
-
 .msg-avatar, .msg-avatar1, .msg-avatar2, .msg-avatar3, .msg-avatar4, .msg-avatar-misterio {
 		width: 36px;
 		height: 36px;
@@ -283,10 +274,19 @@ position: fixed;
 	align-items: center;
 	text-align: left;
 	flex: 1;
+    flex-wrap: wrap;
    
 }
 
-			
+		
+
+
+
+
+
+
+
+
 			
 		/*Renato*/
 		    .msg-avatar {

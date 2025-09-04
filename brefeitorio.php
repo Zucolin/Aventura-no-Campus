@@ -32,12 +32,12 @@ if (!isset($_SESSION['permitido4']) || $_SESSION['permitido4'] !== true) {
 
 
  <button id="btn-livro-celso" class="livro-celso" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/livro-celso.png" alt="Livro-do-Celso" style="width:50px; ">
+        <img src="img/livro-celso.png" alt="Livro-do-Celso" style="width:60px; ">
     </button>
 
 <!-- Personagens -->
  <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/protagonista.png" alt="Vitor" style="width:60px;height:auto;display:block;">
+        <img src="img/protagonista.png" alt="Vitor" style="width:80px;height:auto;display:block;">
     </button>
 
 
@@ -45,12 +45,12 @@ if (!isset($_SESSION['permitido4']) || $_SESSION['permitido4'] !== true) {
 
     <div id="caixa-mensagem4" class="mensagem-vitor">
         <span class="msg-avatar2"></span>
-        <span class="msg-text">VITOR:   Otimo achei até que enfim </span>
+        <span class="msg-text">VITOR:   Ótimo, achei até que enfim </span>
     </div>
 
     <div id="caixa-mensagem5" class="mensagem-vitor">
         <div class="msg-avatar2"></div>
-        <span class="msg-text">VITOR:  Cansado já.. Só queria meu celular</span>
+        <span class="msg-text">VITOR:  Cansado já... Só queria meu celular</span>
     </div>
 
     <div id="caixa-mensagem7" class="mensagem-livro-misterio">
@@ -137,7 +137,7 @@ btnLivro.addEventListener('click', () => {
             width: 100px;
             height: auto;
             transition: transform 0.3s ease;
-            opacity: 70%;
+            opacity: 80%;
         }
 
         .livro-celso {
@@ -146,7 +146,7 @@ btnLivro.addEventListener('click', () => {
         }
 
        .livro-celso:hover {
-            transform: translate(-50%, -50%) scale(2.0);
+            transform: translate(-50%, -50%) scale(2.8);
             opacity: 100%;
        }
        
@@ -170,20 +170,20 @@ btnLivro.addEventListener('click', () => {
       
 
         
-        .btn-laboratorio {
-            display: inline-block;
-            padding: 15px 25px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 8px;
-            transition: 0.3s;
-            margin: 3000px auto;  
-            display: block;      
-            position: fixed;  
-            margin-top: 50px;
-        }
+       .btn-laboratorio {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
         .btn-laboratorio:hover {
             background-color: #2980b9;

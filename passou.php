@@ -35,7 +35,8 @@ if ((isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') ||
     (isset($_POST['acesso8']) && $_POST['acesso8'] === 'ok8') ||
     (isset($_POST['acesso9']) && $_POST['acesso9'] === 'ok9')) {
  if (isset($_POST['acao']) && $_POST['acao'] === 'ganhar') {
-        $_SESSION['pontos'] += 200; // soma pontos
+        $_SESSION['pontos'] += 
+        300; // soma pontos
     }
 }
 
@@ -113,7 +114,7 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok1') {
      //botão acesso9
 } elseif (isset($_POST['acesso9']) && $_POST['acesso9'] === 'ok9') {
     $_SESSION['permitido8'] = true;
-    header("Location: final.php");
+    header("Location: pontuação.php");
     exit;
 
  

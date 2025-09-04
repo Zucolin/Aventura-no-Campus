@@ -48,9 +48,8 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             left: 75%;
         }
 
-        .personagem-renato:hover,
-        .personagem-vitor:hover {
-            transform: translate(-50%, -50%) scale(1.2);
+        .personagem-renato:hover{
+            transform: translate(-50%, -50%) scale(1.4);
         }
 
         .btn-escolha {
@@ -87,12 +86,13 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             display: block; /* precisa ser block para o fade funcionar */
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            background: #1eae60;
-            color: #fff;
-            padding: 12px 24px;
-            width: 200px;      
+            background: #fcfcfcff;
+            color: #000000ff;
+            padding: 10px 16px;
+            width: 100px;      
             height: 80px;
             font-size: 24px;
+            border-radius: 12px;
         }
 
         #btn-proxima-fase.mostrar {
@@ -105,11 +105,11 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
     <!-- Personagens -->
     <button id="btn-renato" class="personagem-renato" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/Renato.png" alt="Renato" style="width:70px;height:auto;display:block;">
+        <img src="img/Renato.png" alt="Renato" style="width:90px;height:auto;display:block;">
     </button>
 
     <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/protagonista.png" alt="Vitor" style="width:60px;height:auto;display:block;">
+        <img src="img/protagonista.png" alt="Vitor" style="width:80px;height:auto;display:block;">
     </button>
 
     <!-- Mensagens -->
@@ -120,12 +120,12 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
     <div id="caixa-mensagem2" class="mensagem-vitor">
         <div class="msg-avatar2"></div>
-        <span class="msg-text">VITOR: Fazendo o corre de hoje né, Coroa me mando pra cá pra ajudar ai</span>
+        <span class="msg-text">VITOR: Fazendo o corre de hoje, Coroa me mando pra cá pra ajudar</span>
     </div>
 
     <div id="caixa-mensagem3" class="mensagem-renato">
         <span class="msg-avatar"></span>
-        <span class="msg-text">RENATO: Bateu o alzhaimer aqui e esqueci as regras de Handbol, passa a visão ai pra nós</span>
+        <span class="msg-text">RENATO: Bateu o alzhaimer aqui e esqueci as regras de Handbol, passa a visão aí pra nós</span>
     </div>
 
     <!-- Escolhas -->
@@ -145,7 +145,7 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
     <div id="caixa-mensagem5" class="mensagem-vitor" style="display:none;">
         <span class="msg-avatar2"></span>
-        <span class="msg-text">Fui mais que obrigado né!!!</span>
+        <span class="msg-text">Fui mais que obrigado né?!!</span>
 
      <form action="passou.php" method="post">
     <input type="hidden" name="acao" value="ganhar">
@@ -193,9 +193,7 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
                     msg3.classList.add('mostrar');
 
                     setTimeout(() => {
-                        msg3.classList.remove('mostrar');
-                        msg3.style.display = "none";
-
+                     
                         escolhas.style.display = "block";
                     }, 5000);
 
@@ -206,10 +204,11 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
         // Eventos para clicar nos personagens
         btnRenato.addEventListener('click', mostrarMensagens);
-        btnVitor.addEventListener('click', mostrarMensagens);
 
         // Fluxo da escolha certa
         btnCerto.addEventListener('click', () => {
+            msg3.classList.remove('mostrar');
+            msg3.style.display = "none";
             escolhas.style.display = "none";
 
             msg4.style.display = "flex";
