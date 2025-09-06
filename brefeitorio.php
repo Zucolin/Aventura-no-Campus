@@ -24,6 +24,25 @@ if (!isset($_SESSION['permitido4']) || $_SESSION['permitido4'] !== true) {
 </head>
 <body>
 
+
+<audio id="som-fundo" src="sound/MUSIC.mp3" loop autoplay></audio>
+
+
+
+
+<div class="modmenu">
+  <p>⚙️ OBJETIVOS/SPOLIER</p>
+  <br>
+  <p><br>Pegar o  Celular</p>
+ <p><br> Entregar o Livro do Celso</p>
+ <p><br> Ir ao Laboratorio</p>
+  
+</div>
+
+
+
+
+
 <form method="post" action="passou.php" >
     <button id="btn-laboratorio" name="acesso5" value="ok5" class="btn-laboratorio" style="display:none;">
         Ir para o laboratório ->
@@ -168,6 +187,33 @@ btnLivro.addEventListener('click', () => {
 
       
       
+
+
+
+         .modmenu {
+  position: fixed;       /* fica preso no canto */
+  top: 20px;             /* distância do topo */
+  left: 20px;           /* distância da esquerda */
+  background: rgba(0, 0, 0, 0.7); /* preto transparente */
+  color: white;          /* texto branco */
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 150px;      /* largura mínima */
+  max-width: 250px;      /* largura máxima */
+  z-index: 9999;         /* sempre acima */
+}
+
+.modmenu p {
+  margin: 2px 0;         /* espaço entre as linhas */
+}
+
+
+
+
+
+
+
 
         
        .btn-laboratorio {

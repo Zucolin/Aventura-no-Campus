@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="responsivo.css">
     
     
-    
     <style>
 		body {
 			margin: 0;
@@ -20,8 +19,9 @@
 			background-repeat: no-repeat;
 			font-family: Arial, sans-serif;
             image-rendering: pixelated;
-        
         }
+        
+        
         .personagem-claudio {
             position: absolute;
             top: 35%;
@@ -31,14 +31,9 @@
             height: auto;
             transition: transform 0.3s ease;
         }
-       
-       
-          .personagem-claudio:hover {
-              transform: translate(-50%, -50%) scale(1.5);
+        .personagem-claudio:hover {
+            transform: translate(-50%, -50%) scale(1.5);
           }
-       
-       
-       
        .personagem-vitor {
             position: absolute;
             top: 60%;
@@ -46,10 +41,10 @@
             transform: translate(-50%, -50%);
             width: 100px;
             cursor: pointer;
-            
-    
-		}
+       }
         
+        
+
         .btn-ok {
             display: none;
             margin-top: 10px;
@@ -61,90 +56,107 @@
             font-size: 30px;
             cursor: pointer;
         }
-	
-   
-   
-   
-   
-   
-   
-   
-   #msg-secreta {
-    display: none;
-    position: fixed;      /* Fixa na tela */
-    top: 50%;             /* Move para o meio vertical */
-    left: 50%;            /* Move para o meio horizontal */
-    transform: translate(-50%, -50%); /* Centraliza certinho */
-    font-size: 2rem;
-    font-weight: bold;
-    color: lime;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px 40px;
-    border-radius: 15px;
-    text-align: center;
-    z-index: 2000;        /* Fica acima de tudo */
-}
-   
-   
-   
-   
-   
-   
-   .tv-falha {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  mix-blend-mode: screen;
-  z-index: 9999;
-  pointer-events: none;
-  overflow: hidden;
-}
+       
+        #msg-secreta {
+            display: none;
+            position: fixed;     
+            top: 50%;             
+            left: 50%;           
+            transform: translate(-50%, -50%); /* Centraliza certinho */
+            font-size: 2rem;
+            font-weight: bold;
+            color: lime;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-align: center;
+            z-index: 2000;        /* Fica acima de tudo */
+        }
+        
+        
+         
+        
+        
+        .vinheta {
+            width: 1600px;
+            height: 800px;
+            background: url('sua-imagem.jpg') center/cover no-repeat;
+            box-shadow: inset 0 0 300px rgba(0, 0, 0, 0.89);
+            position: fixed;
+        }
+        .tv-falha {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            mix-blend-mode: screen;
+            z-index: 9999;
+            pointer-events: none;
+            overflow: hidden;
+        }
 
-.tv-falha::before,
-.tv-falha::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.11) 0px,
-    rgba(255,255,255,0.1) 2px,
-    transparent 2px,
-    transparent 150px
-  );
-  animation: glitchMove 0.2s infinite;
-}
+        .tv-falha::before,
+        .tv-falha::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.11) 0px,
+            rgba(255,255,255,0.1) 2px,
+            transparent 2px,
+            transparent 150px
+        );
+            animation: glitchMove 0.2s infinite;
+        }
 
-.tv-falha::after {
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 0, 255, 0.22) 0px,
-    rgba(0, 255, 255, 0.3) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  animation: glitchMove 0.15s infinite reverse;
-}
+        .tv-falha::after {
+            background: repeating-linear-gradient(
+            to bottom,
+            rgba(0, 0, 255, 0.22) 0px,
+            rgba(0, 255, 255, 0.3) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+            animation: glitchMove 0.15s infinite reverse;
+        }
 
-@keyframes glitchMove {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-2px); }
-}
+        @keyframes glitchMove {
+            from { transform: translateY(0); }
+            to   { transform: translateY(-2px); }
+        }
 
-   
-   
+        
+
+
+        .modmenu {
+            position: fixed;       /* fica preso no canto */
+            top: 20px;             /* distância do topo */
+            left: 20px;           /* distância da direita */
+            background: rgba(0, 0, 0, 0.7); /* preto transparente */
+            color: white;          /* texto branco */
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 150px;      /* largura mínima */
+            max-width: 250px;      /* largura máxima */
+            z-index: 9999;         /* sempre acima */
+        }
+        .modmenu p {
+            margin: 5px 0;        
+        }
+
    </style>
 
 
-
-
-
-
 </head>
+<body>
+
+
+<audio id="som-fundo" src="sound/MEDO.mp3" loop autoplay></audio>
 
 <p id="msg-secreta" style="display:none; color:lime; font-weight:bold;">
     🔑 Código secreto ativado!
@@ -154,23 +166,29 @@
     <input type="hidden" name="codigo_secreto" value="liberar">
 </form>
 
+
+<!-- visuais -->
 <div class="tv-falha"></div>
+<div class="vinheta">
+  <p style="color:white; font-size:24px;"></p>
+</div>
+
+<div class="modmenu">
+  <p>⚙️ OBJETIVOS</p>
+ 
+</div>
 
 
-
-
-
+<!-- Personagem -->
 <button id="btn-personagem" class="personagem-claudio" style="background: none; border: none; padding: 0;">
         <img src="img/claudio.png" alt="Personagem" style="width: 100px; height: auto; display: block;">
     </button>
 
-    <button id="btn-personagem2" class="personagem-vitor" style="background: none; border: none; padding: 0;">
+<button id="btn-personagem2" class="personagem-vitor" style="background: none; border: none; padding: 0;">
         <img src="img/protagonista.png" alt="Personagem" style="width: 80px; height: auto; display: block;">
     </button>
 
    
-   
-
    
   <!-- Caixa do Claudio -->
 <div id="caixa-mensagem1" class="mensagem-claudio">
@@ -211,21 +229,21 @@
         CLAUDIO: Vá ajudar o Renato que eu penso no seu caso!!!
     </span>
 
+
     <form action="passou.php" method="post">
-        <button id="btn-ok" class="btn-ok" name="acesso1" type="submit" value="ok1" style="margin-left:16px;">
+       <a href="desafio1.php"> <button id="btn-ok" class="btn-ok" name="acesso1" type="submit" value="ok1" style="margin-left:16px;">
             OK
-        </button>
+        </button> <a>
     </form>
 </div>
 
 
 
    
-   
-   
 <script>
-   const msg = document.getElementById('caixa-mensagem');
-const btnPersonagem = document.getElementById('btn-personagem');
+
+    const msg = document.getElementById('caixa-mensagem');
+    const btnPersonagem = document.getElementById('btn-personagem');
     const msg1 = document.getElementById('caixa-mensagem1');
     const msg2 = document.getElementById('caixa-mensagem2');
     const msg3 = document.getElementById('caixa-mensagem3');
@@ -262,18 +280,7 @@ const btnPersonagem = document.getElementById('btn-personagem');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Codigo -P- */
 
 let ultimaTecla = 0;
 
@@ -295,20 +302,8 @@ document.addEventListener("keydown", function(event) {
 });
 
 
-
-
-
-
-
-
-
-
 </script>
 
 
-  
 </body>
 </html>
-<?php
-	$nivel=1;
-?>

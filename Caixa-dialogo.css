@@ -31,7 +31,6 @@ position: fixed;
 			}
             
 
-
 .mensagem-claudio  {
 	position: fixed;
     left: 50%;
@@ -57,7 +56,6 @@ position: fixed;
 	visibility: visible;
 	animation: fadeIn 0.3s;
             }
-
 
 
 .mensagem-vitor{
@@ -87,7 +85,6 @@ position: fixed;
             }
 
 
-
 .mensagem-celso{
 	position: fixed;
     left: 50%;
@@ -112,7 +109,6 @@ position: fixed;
 	visibility: visible;
 	animation: fadeIn 0.3s;
             }
-
 
 
 .mensagem-juliana{
@@ -141,7 +137,6 @@ position: fixed;
             }
 
 
-
 .mensagem-livro-misterio {
     position: fixed;
     left: 50%;
@@ -165,14 +160,12 @@ position: fixed;
     
     visibility: hidden;
 }
-
 .mensagem-livro-misterio.mostrar {
     visibility: visible;
     animation: fadeIn 0.3s;
 }
 
-  
-            
+
 .mensagem-secreta {
 	position: fixed;
     left: 50%;
@@ -197,7 +190,6 @@ position: fixed;
 	visibility: visible;
 	animation: fadeIn 0.3s;
 }
-
 
 
 .mensagem-fabio{
@@ -229,24 +221,11 @@ position: fixed;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @keyframes fadeIn {
 	from { opacity: 0; transform: translateX(-50%) translateY(20px); }
 	to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
-	
 @media (max-width: 1200px) {
 	 .mensagem{
     font-size: 1em;
@@ -260,152 +239,133 @@ position: fixed;
 }
 
 
-
-
-
+/* //////////////////////////// */
 
 
 .msg-avatar, .msg-avatar1, .msg-avatar2, .msg-avatar3, .msg-avatar4, .msg-avatar-misterio {
 		width: 36px;
 		height: 36px;
 }			
+
 .msg-text {
 	display: flex;
 	align-items: center;
 	text-align: left;
 	flex: 1;
-    flex-wrap: wrap;
-   
+    flex-wrap: wrap; 
 }
 
-		
+	
 
 
+/*Renato*/
+    .msg-avatar {
+        width: 130px;
+        height: 130px;
+        background: #fcfcfc6c;
+        flex-shrink: 0;
+        background-image: url('img/Renato.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 24px;
+    }
+    
+/*Cláudio*/
+    .msg-avatar1{
+        width: 130px;
+        height: 130px;
+        background: #fcfcfc6c;
+        flex-shrink: 0;
+        background-image: url('img/claudio.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 24px;
+    }
+    
+/*Protagonista*/
+    .msg-avatar2{
+            width: 130px;
+        height: 130px;
+        background: #fcfcfc6c;
+        flex-shrink: 0;
+        background-image: url('img/protagonista.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 24px;
+    }
 
+/*Celso*/
+    .msg-avatar3{
+        width: 130px;
+        height: 130px;
+        background: #fcfcfc6c;
+        flex-shrink: 0;
+        background-image: url('img/Celso.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 24px;
+    }
 
+/*Juliana*/
+    .msg-avatar4{
+        width: 130px;
+        height: 130px;
+        background: #fcfcfc6c;
+        flex-shrink: 0;
+        background-image: url('img/juliana.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 24px;
+    }
 
+/*livro-misterio*/
+    .msg-avatar-misterio{
+        width: 130px;
+        height: 130px;
+        background: #fcfcfc00;
+        flex-shrink: 0;
+        background-image: url('img/livro-qr.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 24px;
+    }
 
+/*livro-misterio*/
+    .msg-avatar-celso{
+        width: 130px;
+        height: 130px;
+        background: #fcfcfc00;
+        flex-shrink: 0;
+        background-image: url('img/livro-celso.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 24px;
+    }
 
-
-			
-		/*Renato*/
-		    .msg-avatar {
-				width: 130px;
-				height: 130px;
-				background: #fcfcfc6c;
-				flex-shrink: 0;
-				background-image: url('img/Renato.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-			}
-			
-		/*Cláudio*/
-			.msg-avatar1{
-			    width: 130px;
-				height: 130px;
-				background: #fcfcfc6c;
-				flex-shrink: 0;
-				background-image: url('img/claudio.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-			}
-			
-		/*Protagonista*/
-			.msg-avatar2{
-					width: 130px;
-				height: 130px;
-				background: #fcfcfc6c;
-				flex-shrink: 0;
-				background-image: url('img/protagonista.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-			}
-
-        /*Celso*/
-			.msg-avatar3{
-				width: 130px;
-				height: 130px;
-				background: #fcfcfc6c;
-				flex-shrink: 0;
-				background-image: url('img/Celso.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-			}
-
-        /*Juliana*/
-			.msg-avatar4{
-				width: 130px;
-				height: 130px;
-				background: #fcfcfc6c;
-				flex-shrink: 0;
-				background-image: url('img/juliana.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-			}
-
-        /*livro-misterio*/
-			.msg-avatar-misterio{
-				width: 130px;
-				height: 130px;
-				background: #fcfcfc00;
-				flex-shrink: 0;
-				background-image: url('img/livro-qr.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-			}
-
-        /*livro-misterio*/
-			.msg-avatar-celso{
-				width: 130px;
-				height: 130px;
-				background: #fcfcfc00;
-				flex-shrink: 0;
-				background-image: url('img/livro-celso.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-            }
-
-        /*Fabio*/
-            .msg-avatar5{
-                width: 130px;
-				height: 130px;
-				background: #fcfcfc00;
-				flex-shrink: 0;
-				background-image: url('img/Fabio.png');
-				background-size: cover;
-				background-position: center;
-				display: inline-block;
-				margin-left: 0;
-				margin-right: 24px;
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-            }
+/*Fabio*/
+    .msg-avatar5{
+        width: 130px;
+        height: 130px;
+        background: #fcfcfc00;
+        flex-shrink: 0;
+        background-image: url('img/Fabio.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 24px;
+    }

@@ -5,11 +5,9 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
     header("Location: dialogoclaudio.php");
     exit;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +15,8 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
     <link rel="stylesheet" href="Caixa-dialogo.css">
     <link rel="stylesheet" href="responsivo.css">
 
-    <style>
+
+<style>
         body {
             margin: 0;
             padding: 0;
@@ -28,7 +27,6 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             background-repeat: no-repeat;
             image-rendering: pixelated;
         }
-
         .personagem-renato,
         .personagem-vitor {
             position: absolute;
@@ -37,20 +35,20 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             height: auto;
             transition: transform 0.3s ease;
         }
-
         .personagem-renato {
             top: 40%;
             left: 65%;
         }
-
         .personagem-vitor {
             top: 70%;
             left: 75%;
         }
-
         .personagem-renato:hover{
             transform: translate(-50%, -50%) scale(1.4);
         }
+
+
+
 
         .btn-escolha {
             display: block;
@@ -98,10 +96,45 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
         #btn-proxima-fase.mostrar {
             opacity: 1;
         }
-    </style>
-</head>
+   
+   
+   
+   
+        .modmenu {
+            position: fixed;      
+            top: 20px;            
+            left: 20px;           
+            background: rgba(0, 0, 0, 0.41);
+            color: white;          
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 150px;     
+            max-width: 250px;    
+            z-index: 9999;         
+            }
 
-<body class="pagina-desafio1">
+        .modmenu p {
+            margin: 2px 0;     
+        }
+
+</style>
+
+
+</head>
+<body  >
+
+
+<audio id="som-fundo" src="sound/MUSIC.mp3" autoplay loop></audio>
+
+
+<div class="modmenu">
+  <p>⚙️ OBJETIVOS</p>
+  <br>
+  <p><br>Pegar o  Celular</p>
+ <p><br> Ajudar o Renato</p>
+</div>
+
 
     <!-- Personagens -->
     <button id="btn-renato" class="personagem-renato" style="background:none;border:none;padding:0;cursor:pointer;">
@@ -143,22 +176,20 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
         <span class="msg-text">Valeu, vai ganhar um ponto na media em!!</span>
     </div>
 
-    <div id="caixa-mensagem5" class="mensagem-vitor" style="display:none;">
+<div id="caixa-mensagem5" class="mensagem-vitor" style="display:none;">
         <span class="msg-avatar2"></span>
         <span class="msg-text">Fui mais que obrigado né?!!</span>
 
      <form action="passou.php" method="post">
     <input type="hidden" name="acao" value="ganhar">
-    <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok2">
+   <a href="meio-1.php"> <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok2">
        OK
-    </button>
-</form>
+    </button><a>
+     </form>
 
-</form>
+</div>
 
-    </div>
-
-    <script>
+<script>
         // Personagens
         const btnRenato = document.getElementById('btn-renato');
         const btnVitor = document.getElementById('btn-vitor');
@@ -228,9 +259,9 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
             }, 5000);
         });
-    </script>
-   
 
+</script>
+   
 
 </body>
 </html>

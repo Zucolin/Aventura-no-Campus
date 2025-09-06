@@ -8,35 +8,165 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
     exit;
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-     <link rel="stylesheet" href="Caixa-dialogo.css">
-<link rel="stylesheet" href="responsivo.css">
-
-
 <meta charset="UTF-8">
-    <title>Desafio 2</title>
+<title>Desafio 2</title>
+     <link rel="stylesheet" href="Caixa-dialogo.css">
+     <link rel="stylesheet" href="responsivo.css">
+
+
+<style>
+        body {
+         margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-image: url('img/laboratorio.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            image-rendering: crisp-edges;
+        }
+        .personagem-celso,
+        .personagem-vitor {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .personagem-celso {
+            top: 15%;
+            left: 90%;
+        }
+        .personagem-vitor {
+            top: 40%;
+            left: 78%;
+        }
+         
+      
+
+        .livro-celso{
+            position: fixed;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease;
+            opacity: 90%;
+        }
+        .livro-celso {
+            top: 35%;
+            left: 82%;
+        }
+        .livro-celso:hover {
+            transform: translate(-50%, -50%) scale(2.0);
+            opacity: 100%;
+       }
+       
+       
+    
+        .btn-escolha {
+            display: block;
+            width: 90vw;
+            max-width: 10000px;
+            margin: 20px auto;
+            padding: 24px 0;
+            font-size: 22px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-escolha:nth-child(1) {
+            background: #4b90ff;
+        }
+
+        .btn-escolha:nth-child(2) {
+            background: #43c96e;
+        }
+
+        .btn-escolha:nth-child(3) {
+            background: #f7b32b;
+        }
+
+        .btn-escolha:hover {
+            filter: brightness(1.1);
+        }
+
+        #btn-proxima-fase {
+            margin: 20px auto;
+            display: none; /* inicial escondido */
+            background: #ffffffff;
+            color: black;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+        }
+        #btn-proxima-fase.mostrar {
+            display: block;
+            opacity: 1;
+        }
+
+       
+       
+        /* Botão do livro */
+        .livro-misterio {
+            position: fixed;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .livro-misterio:hover {
+            transform: translate(-50%, -50%) scale(1.3);
+        }
+       
+
+
+        .modmenu {
+            position: fixed;      
+            top: 20px;            
+            left: 20px;           
+            background: rgba(0, 0, 0, 0.41);
+            color: white;          
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 150px;     
+            max-width: 250px;    
+            z-index: 9999;         
+            }
+
+        .modmenu p {
+            margin: 2px 0;     
+        }
+       
+</style>
+
+
 </head>
 <body>
    
 
-
-
-
 <div style="background:none; color: red; width:100px; height:100px; border-radius:8px; 
             position:absolute; top:85%; left:47.4%; transform:translate(-50%,-50%);">
 <p><STRONG>INVENTÁRIO/BLOQUEADO</STRONG></p>
-
-</div>
+      </div>
 
 <div style="background:rgba(233, 101, 101, 1); width:100px; height:100px; border-radius:8px; 
             position:absolute; top:90%; left:50.4%; transform:translate(-50%,-50%);">
-</div>
-
-
+      </div>
 <!-- Botão do livro -->
   <button id="btn-livro-misterio" class="livro-misterio">
     <img src="img/livro-qr.png" alt="Livro misterioso" style="width:100%;">
@@ -44,14 +174,16 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
 
  
 
+<audio id="som-fundo" src="sound/MUSIC.mp3" loop autoplay></audio>
 
 
-
-
-
-
-
-
+<div class="modmenu">
+  <p>⚙️ OBJETIVOS/SPOLIER</p>
+  <br>
+  <p><br>Pegar o  Celular</p>
+ <p><br> Entregar o Livro do Celso</p>
+ <p><br> Ir Ajudar o Fábio </p>
+</div>
 
 
  <!-- Personagens -->
@@ -60,14 +192,14 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
         <img src="img/livro-celso.png" alt="Livro-do-Celso" style="width:60px; ">
     </button>
  
- 
  <button id="btn-celso" class="personagem-celso" style="background:none;border:none;padding:0;cursor:pointer;">
         <img src="img/Celso.png" alt="Celso" style="width:80px;height:auto;display:block;">
     </button>
 
-    <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
+ <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
         <img src="img/protagonista.png" alt="Vitor" style="width:70px;height:auto;display:block;">
     </button>
+
 
 <!-- Mensagens -->
     <div id="caixa-mensagem1" class="mensagem-vitor">
@@ -91,32 +223,29 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
     </div>
 
 
-
  <!-- Escolhas -->
     <div id="escolhas" style="display:none; text-align:center; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:101; width:100vw;">
-        <button class="btn-escolha" id="btn-errado1">
+<button class="btn-escolha" id="btn-errado1">
         Hidroxido de sodio (NaOH) que reage com ácido clorídrico (HCl) liberando água e sal.
         </button>
 <button class="btn-escolha" id="btn-certo">
         Metano (CH₄) que reage com oxigênio (O₂) liberando energia em forma de calor e luz.
         </button>
-        <button class="btn-escolha" id="btn-errado2">
+<button class="btn-escolha" id="btn-errado2">
         Carbonato de cálcio (CaCO₃) que reage com ácido sulfúrico (H₂SO₄) liberando gás carbônico (CO₂) e água.
         </button>
     </div>
 
-    <div id="caixa-mensagem5" class="mensagem-renato" >
+<!-- Mensagens -->    
+<div id="caixa-mensagem5" class="mensagem-renato" >
         <span class="msg-avatar3"></span>
         <span class="msg-text">Bom garoto... Agora vai que Fabio te espera</span>
      
       <form action="passou.php" method="post">
         <input type="hidden" name="acao" value="ganhar">
-    <button id="btn-proxima-fase" type="submit" name="acesso6" value="ok6" style="display:none;">
-        Ok
-    </button>
-</form>
-
-   </div>
+     <a href="desafio3.php"> <button id="btn-proxima-fase" type="submit" name="acesso6" value="ok6" style="display:none;">OK</button><a>
+      </form>
+</div>
 
 
 
@@ -164,8 +293,6 @@ function mostrarMensagens() {
                 msg4.classList.add('mostrar');
 
                setTimeout(() => {
-                  
-
                     // Mostra as escolhas
                     escolhas.style.display = "block";
 
@@ -178,173 +305,29 @@ function mostrarMensagens() {
     }, 5000); // tempo da msg1
 }
 
-// Ao clicar no livro, inicia a sequência
-btnlivro.addEventListener('click', mostrarMensagens);
+    // Ao clicar no livro, inicia a sequência
+    btnlivro.addEventListener('click', mostrarMensagens);
 
-// Funções das escolhas
-btnCerto.addEventListener('click', () => {
-    msg4.classList.remove('mostrar'); // esconde msg4
-    msg4.style.display = "none";
-    escolhas.style.display = "none"; // esconde escolhas
-    msg5.style.display = "flex";
-    msg5.classList.add('mostrar');
-    // libera botão da próxima fase
-    btnProxima.style.display = "block";
-});
+    // Funções das escolhas
+    btnCerto.addEventListener('click', () => {
+        msg4.classList.remove('mostrar'); // esconde msg4
+        msg4.style.display = "none";
+        escolhas.style.display = "none"; // esconde escolhas
+        msg5.style.display = "flex";
+        msg5.classList.add('mostrar');
+        // libera botão da próxima fase
+        btnProxima.style.display = "block";
+    });
 
-btnErrado1.addEventListener('click', () => {
-    alert("Ops! Não é essa a reação correta. Tente novamente.");
-});
+    btnErrado1.addEventListener('click', () => {
+        alert("Ops! Não é essa a reação correta. Tente novamente.");
+    });
 
-btnErrado2.addEventListener('click', () => {
-    alert("Ops! Não é essa a reação correta. Tente novamente.");
-});
+    btnErrado2.addEventListener('click', () => {
+        alert("Ops! Não é essa a reação correta. Tente novamente.");
+    });
+
 </script>
-
-
-
-
 
 </body>
 </html>
-
-
-
-
-
-<style>
-        body {
-         margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            background-image: url('img/laboratorio.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
-            image-rendering: crisp-edges;
-        }
-        
-        
-
-
-
-        
-
-        
-         .personagem-celso,
-        .personagem-vitor {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .personagem-celso {
-            top: 15%;
-            left: 90%;
-        }
-
-        .personagem-vitor {
-            top: 40%;
-            left: 78%;
-        }
-         
-      
-
-           .livro-celso{
-            position: fixed;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: auto;
-            transition: transform 0.3s ease;
-            opacity: 90%;
-        }
-
-        .livro-celso {
-            top: 35%;
-            left: 82%;
-        }
-       .livro-celso:hover {
-            transform: translate(-50%, -50%) scale(2.0);
-            opacity: 100%;
-       }
-       
-       
-       
-
-
-
-        .btn-escolha {
-            display: block;
-            width: 90vw;
-            max-width: 10000px;
-            margin: 20px auto;
-            padding: 24px 0;
-            font-size: 22px;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-escolha:nth-child(1) {
-            background: #4b90ff;
-        }
-
-        .btn-escolha:nth-child(2) {
-            background: #43c96e;
-        }
-
-        .btn-escolha:nth-child(3) {
-            background: #f7b32b;
-        }
-
-        .btn-escolha:hover {
-            filter: brightness(1.1);
-        }
-
-        #btn-proxima-fase {
-    margin: 20px auto;
-    display: none; /* inicial escondido */
-    background: #ffffffff;
-    color: black;
-    padding: 12px 24px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    transition: opacity 0.5s ease-in-out;
-}
-#btn-proxima-fase.mostrar {
-    display: block;
-    opacity: 1;
-}
-
-       
-       
-       
-       
-       
-       
-        /* Botão do livro */
-    .livro-misterio {
-      position: fixed;
-      top: 90%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .livro-misterio:hover {
-      transform: translate(-50%, -50%) scale(1.3);
-    }
-       
-       
-       </style>

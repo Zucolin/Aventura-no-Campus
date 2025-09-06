@@ -31,6 +31,22 @@ $_SESSION['passou_biblioteca'] = true;
 </form>
 
 
+<audio id="som-fundo" src="sound/CON" loop autoplay></audio>
+
+
+
+
+<div class="modmenu">
+  <p>⚙️ OBJETIVOS/SPOLIER</p>
+  <br>
+  <p><br>Pegar o  Celular</p>
+ <p><br> Achar livro do Celso</p>
+ <p><br> Ir ao Laboratorio</p>
+  
+</div>
+
+
+
 <!-- Personagens -->
  <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
         <img src="img/protagonista.png" alt="Vitor" style="width:80px;height:auto;display:block;">
@@ -151,7 +167,7 @@ btnLivro.addEventListener('click', () => {
 
                 setTimeout(() => {
                     msg6.classList.remove('mostrar');
-                vlt.style.display = 'block';
+                vlt.style.display = 'inline-block';
 
                 }, 6000); // tempo da última msg
             }, 6000); // msg5
@@ -242,20 +258,48 @@ btnLivro.addEventListener('click', () => {
        
        
        
-    .btn-voltar {
-      display: inline-block;
-      padding: 15px 25px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      border-radius: 8px;
-      transition: 0.3s;
-      margin: 30px;
-    }
-    .btn-voltar:hover {
-      background-color: #2980b9;
-    }
-       
+       .btn-voltar {
+    display: none;
+    padding: 15px 25px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+        .btn-voltar:hover {
+            background-color: #2980b9;
+       }
+
+
+
+
+
+
+
+
+     .modmenu {
+  position: fixed;       /* fica preso no canto */
+  top: 20px;             /* distância do topo */
+  left: 20px;           /* distância da esquerda */
+  background: rgba(0, 0, 0, 0.7); /* preto transparente */
+  color: white;          /* texto branco */
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 150px;      /* largura mínima */
+  max-width: 250px;      /* largura máxima */
+  z-index: 9999;         /* sempre acima */
+}
+
+.modmenu p {
+  margin: 2px 0;         /* espaço entre as linhas */
+}
       
       </style>

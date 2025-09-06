@@ -26,6 +26,11 @@ if ($_SESSION['pontos'] < 0) {
 // Atualiza o timestamp para que não perca pontos duplicados se o jogador clicar de novo
 $_SESSION['inicio_fase'] = time();
 
+
+
+
+
+
 if ((isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') ||
     (isset($_POST['acesso3']) && $_POST['acesso3'] === 'ok3') ||
     (isset($_POST['acesso4']) && $_POST['acesso4'] === 'ok4') ||
@@ -39,6 +44,7 @@ if ((isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') ||
         300; // soma pontos
     }
 }
+
 
 
 
@@ -57,8 +63,6 @@ if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
     header("Location: dialogoclaudio.php"); // manda direto
     exit;
 }
-
-
 
 
 

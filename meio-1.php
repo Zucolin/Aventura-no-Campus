@@ -8,21 +8,103 @@ if (!isset($_SESSION['permitido2']) || $_SESSION['permitido2'] !== true) {
     exit;
 }
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <link rel="stylesheet" href="Caixa-dialogo.css">
-<link rel="stylesheet" href="responsivo.css">
-
-<meta charset="UTF-8">
+    <link rel="stylesheet" href="responsivo.css">
+    <meta charset="UTF-8">
     <title>Desafio 2</title>
+
+
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-image: url('img/MEIO.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            image-rendering: pixelated;
+        }
+        .personagem-celso,
+        .personagem-vitor {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .personagem-celso {
+            top: 30%;
+            left: 55%;
+        }
+        .personagem-vitor {
+            top: 20%;
+            left: 65%;
+        }
+        .personagem-celso:hover {
+            transform: translate(-50%, -50%) scale(1.4);
+        }
+        
+        
+
+        .botoes-escolhas button {
+            padding: 35px 40px;
+            margin: 5px;
+            background-color: #1eae60;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 36px;
+            transition: transform 0.3s ease,
+        }
+
+        .botoes-escolhas button:hover {
+            background-color: #4fc88cff;
+            transform: scale(1.1);
+        }
+
+        
+    
+        .modmenu {
+            position: fixed;      
+            top: 20px;            
+            left: 20px;           
+            background: rgba(0, 0, 0, 0.41);
+            color: white;          
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 150px;     
+            max-width: 250px;    
+            z-index: 9999;         
+            }
+
+        .modmenu p {
+            margin: 2px 0;     
+        }
+</style>
+
+
 </head>
 <body>
    
+
+<audio src="sound/CONVERSA.mp3" autoplay loop></audio>
+
+
+<div class="modmenu">
+  <p>⚙️ OBJETIVOS/SPOLIER</p>
+  <br>
+  <p><br>Pegar o  Celular</p>
+ <p><br> Achar livro do Celso</p>
+ <p><br> Ir ao Laboratorio</p>
+  
+</div>
+
+
  <!-- Personagens -->
     <button id="btn-celso" class="personagem-celso" style="background:none;border:none;padding:0;cursor:pointer;">
         <img src="img/Celso.png" alt="Celso" style="width:90px;height:auto;display:block;">
@@ -53,37 +135,29 @@ if (!isset($_SESSION['permitido2']) || $_SESSION['permitido2'] !== true) {
         <span class="msg-text">VITOR: Beleza pode deixar! </span>
     </div>
 
-  <!-- Botões de escolha (escondidos inicialmente) -->
-
-
+  
+    <!-- Botões de escolha -->
 <div id="botoes-escolha" class="botoes-escolhas" style="text-align:center; margin-top:20px; display:none;">
 
-    <!-- Biblioteca (sempre acessível) -->
+    <!-- Biblioteca  -->
     
     <form action="passou.php" method="post" style="display:inline;">
-        <button name="acesso3" type="submit" value="ok3">Ir para a biblioteca</button>
+        <a href="biblioteca.php"><button name="acesso3" type="submit" value="ok3">Ir para a biblioteca</button><a>
     </form>
 
-    <!-- Refeitório (só libera depois da biblioteca) -->
+    <!-- Refeitório  -->
     
     <?php if (isset($_SESSION['passou_biblioteca']) && $_SESSION['passou_biblioteca'] === true): ?>
        
-       
         <form action="passou.php" method="post" style="display:inline;">
-            <button name="acesso4" type="submit" value="ok4">Ir para o refeitório</button>
+           <a href="brefeitorio.php"> <button name="acesso4" type="submit" value="ok4">Ir para o refeitório</button><a>
         </form>
-    
     
         <?php else: ?>
         <button style="background:red; color:white;" disabled>Ir para o refeitório</button>
     <?php endif; ?>
 
 </div>
-
-
-
-
-
 
 
 <script>
@@ -137,88 +211,9 @@ if (sessionStorage.getItem("checkpointMeio1") === "botoes") {
     // Começa apenas ao clicar no Celso
     btnCelso.addEventListener("click", mostrarMensagens);
 }
-</script>
-
-
 
 </script>
-
-
-
-
-
-
-
 
 
 </body>
 </html>
-
-
-
-
-
-
-
-<style>
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            background-image: url('img/MEIO.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            image-rendering: pixelated;
-        }
-        
-        
-        
-        
-         .personagem-celso,
-        .personagem-vitor {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .personagem-celso {
-            top: 30%;
-            left: 55%;
-        }
-
-        .personagem-vitor {
-            top: 20%;
-            left: 65%;
-        }
-         .personagem-celso:hover {
-            transform: translate(-50%, -50%) scale(1.4);
-        }
-        
-        
-        
-        
-        
-.botoes-escolhas button {
-    padding: 35px 40px;
-    margin: 5px;
-    background-color: #1eae60;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 36px;
-    transition: transform 0.3s ease,
-}
-
-.botoes-escolhas button:hover {
-    background-color: #4fc88cff;
-    transform: scale(1.1);
-}
-
-        
-        
-        
-        
-        </style>

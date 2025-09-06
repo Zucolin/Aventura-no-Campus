@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
@@ -8,13 +7,8 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
   exit;
 }
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,50 +16,242 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
   <link rel="stylesheet" href="Caixa-dialogo.css">
   <link rel="stylesheet" href="responsivo.css">
 
-</head>
 
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('img/lie.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: crisp-edges;
+  }
+  .personagem-fabio,
+  .personagem-vitor {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  .personagem-fabio {
+    top: 40%;
+    left: 70%;
+  }
+  .personagem-vitor {
+    top: 60%;
+    left: 82%;
+  }
+  .personagem-fabio:hover {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+  
+
+
+  /* Botão do livro */
+  .livro-misterio {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+     z-index: 2001;          /* acima do bg */
+  pointer-events: auto; 
+  }
+  .livro-misterio:hover {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  .popup-livro {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(240, 240, 240, 0.57);
+    z-index: 9999;
+  }/* Caixa centralizada */
+  .popup-conteudo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 90%;
+    max-height: 90%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .popup-conteudo img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+  }
+  .fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+  .fechar:hover {
+    color: red;
+  }
+
+
+
+
+  .bg {
+    background-image: url('./img/computador.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display:  none;
+    z-index: 1000;  
+    }
+  .bg * {
+    pointer-events: auto;   /* garante que tudo dentro do bg receba clique */
+  }
+  .codigo {
+    background-image: url('./img/codigo.png');
+    background-size: cover;
+    /* Faz a imagem ocupar a tela inteira */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 60px;
+    transition: transform 0.3s ease;
+  }
+  .codigo {
+    top: 30%;
+    left: 52%;
+  }
+
+
+
+  .form1 {
+    padding: 20px 30px;
+    margin-top: 260px;
+    text-align: center;
+    margin-left: 50px;
+   
+  }
+  input[type="text"] {
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    margin: 10px 0;
+    width: 200px;
+   
+  }
+  .enviar {
+    padding: 40px 110px;
+    border: none;
+    border-radius: 6px;
+    opacity: 0%;
+    background: none cursor: pointer;
+    margin-top: 34px;
+  }
+
+
+
+  #btn-proxima-fase {
+    margin: 20px auto;
+    display: none;
+    /* inicial escondido */
+    background: #ffffffff;
+    color: black;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+  }
+  #btn-proxima-fase.mostrar {
+    display: block;
+    opacity: 1;
+  }
+
+
+
+  .modmenu {
+    position: fixed;      
+    top: 20px;            
+    left: 20px;           
+    background: rgba(0, 0, 0, 0.41);
+    color: white;          
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 150px;     
+    max-width: 250px;    
+    z-index: 9999;         
+  }
+  .modmenu p {
+    margin: 2px 0;     
+  }
+
+</style>
+
+
+</head>
 <body>
 
 
-
-
   <div style="background:none; color: white; width:100px; height:100px; border-radius:8px; 
-            position:absolute; top:85%; left:50.4%; transform:translate(-50%,-50%);">
+            position:absolute; top:85%; left:50.4%; transform:translate(-50%,-50%);  z-index:2001;">
     <p><STRONG>INVENTARIO</STRONG></p>
   </div>
 
   <div style="background:white; width:100px; height:100px; border-radius:8px; 
-            position:absolute; top:90%; left:50.4%; transform:translate(-50%,-50%);">
+            position:absolute; top:90%; left:50.4%; transform:translate(-50%,-50%); z-index:2001;">
   </div>
 
 
-  <!-- Botão do livro -->
+  <!-- LIVRO -->
   <button id="btn-livro-misterio" class="livro-misterio">
     <img src="img/livro-qr.png" alt="Livro misterioso" style="width:100%;">
   </button>
-
-  <!-- Popup -->
+  <!-- ABERTO -->
   <div id="popup-livro" class="popup-livro">
     <div class="popup-conteudo">
       <span id="fechar-popup" class="fechar">&times;</span>
-      <img src="img/livro-qr2.png" alt="Livro aberto">
+      <img src="img/codigos-livro.jpg" style="width:450px;" alt="Livro aberto">
     </div>
   </div>
 
 
 
 
+<div class="modmenu">
+  <p>⚙️ OBJETIVOS/SPOLIER</p>
+  <br>
+  <p><br>*Pegar o  Celular</p>
+ <p><br> *Ajudar o Fábio</p>
+ <p><br> *Resolver computador</p>
+</div>
+
+<audio id="som-fundo" src="sound/MUSIC.mp3" loop autoplay></audio>
 
 
-
-
-
-
-
-
-
-
-
+  <!-- Personagens -->
   <button id="btn-fabio" class="personagem-fabio" style="background:none;border:none;padding:0;cursor:pointer;">
     <img src="img/Fabio.png" alt="Fabio" style="width:170px;height:auto;display:block;">
   </button>
@@ -73,7 +259,6 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
   <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
     <img src="img/protagonista.png" alt="Vitor" style="width:75px;height:auto;display:block;">
   </button>
-
 
   <!-- Mensagens -->
   <div id="caixa-mensagem1" class="mensagem-fabio">
@@ -93,11 +278,6 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
       <span class="msg-text">VITOR: Beleza deixa eu ver um negócio aqui <span style="color: yellow; display: block;">**ABRA O INVENTÁRIO**</span></span>
  </div>
 
- 
-
-
-
-
   <div id="caixa-mensagem4" class="mensagem-fabio">
     <span class="msg-avatar2"></span>
     <span class="msg-text">VITOR: Que coincidência incrivel.. coincidência de jogo isso!!! O livro que achei tem
@@ -110,6 +290,7 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
   </div>
 
 
+  <!-- Computador -->
   <div class="bg">
     <div class="codigo"></div>
     <form class="form1" action="verificar.php" method="POST">
@@ -118,6 +299,8 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
       <button value="ok7" class="enviar" type="submit">Enviar</button>
     </form>
   </div>
+
+
 
   <div id="caixa-mensagem6" class="mensagem-fabio">
     <span class="msg-avatar5"></span>
@@ -129,19 +312,17 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
     <span class="msg-text">VITOR: Eu lá vou saber Fabio </span>
   </div>
 
-  <div id="caixa-mensagem8" class="mensagem-fabio">
+<div id="caixa-mensagem8" class="mensagem-fabio">
     <span class="msg-avatar5"></span>
     <span class="msg-text">FABIO: É uma facada nas costas isso, pode deixar que daqui resolvo, VLW Vitor!!! </span>
-    <form action="passou.php" method="post">
+ <form action="passou.php" method="post">
       <input type="hidden" name="acao" value="ganhar">
-      <button id="btn-proxima-fase" type="submit" name="acesso7" value="ok7" style="display:none;">
+      <a href="desafio4.php"><button id="btn-proxima-fase" type="submit" name="acesso7" value="ok7" style="display:none;">
         Ok
-      </button>
-    </form>
+      </button><a>
+ </form>
 
-  </div>
-
-
+</div>
 
 
   <script>
@@ -178,14 +359,6 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
 
 
 
-
-
-
-
-
-
-
-
     function mostrarMensagens() {
       msg1.style.display = "flex"; // mostra a primeira
       msg1.classList.add('mostrar');
@@ -210,33 +383,31 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
               msg5.style.display = "flex";
               msg5.classList.add('mostrar');
 
-              // Exibe o formulário depois da msg5
+             
               setTimeout(() => {
 
                 msg5.style.display = "none";
-                bg.style.display = "block"; // mostra o formulário
+                bg.style.display = "block"; 
 
               }, 5000); // tempo que o msg5 fica visível
 
             }, 8000); // tempo da quarta mensagem
 
-          }, 10000); // tempo da terceira mensagem
+          }, 12000); // tempo da terceira mensagem
 
-        }, 8000); // tempo da segunda mensagem
+        }, 9000); // tempo da segunda mensagem
 
-      }, 5000); // tempo da primeira mensagem
+      }, 6000); // tempo da primeira mensagem
     }
 
     // Ativa a sequência ao clicar no Fabio
     btnfabio.addEventListener('click', mostrarMensagens);
 
 
+
     const form = document.querySelector('.bg form');
     form.addEventListener('submit', function (e) {
       e.preventDefault(); // evita o reload da página
-
-
-
 
       const resposta = document.getElementById('resposta').value;
 
@@ -251,7 +422,6 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
             // Esconde o formulário
             document.querySelector('.bg').style.display = 'none';
 
-            // Gera a sequência das próximas mensagens
             msg6.style.display = 'flex';
             msg6.classList.add('mostrar');
             setTimeout(() => {
@@ -274,213 +444,8 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
     });
 
 
-
-
-
   </script>
 
 
-
-
-
 </body>
-
 </html>
-
-
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-image: url('img/lie.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    image-rendering: crisp-edges;
-  }
-
-
-
-
-
-  .personagem-fabio,
-  .personagem-vitor {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 180px;
-    height: auto;
-    transition: transform 0.3s ease;
-  }
-
-  .personagem-fabio {
-    top: 40%;
-    left: 70%;
-  }
-
-  .personagem-vitor {
-    top: 60%;
-    left: 82%;
-  }
-
-  .personagem-fabio:hover {
-    transform: translate(-50%, -50%) scale(1.4);
-  }
-  
-
-
-
-
-
-  /* Botão do livro */
-  .livro-misterio {
-    position: fixed;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  .livro-misterio:hover {
-    transform: translate(-50%, -50%) scale(1.3);
-  }
-
-  /* Fundo escuro do popup */
-  .popup-livro {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(240, 240, 240, 0.57);
-    z-index: 9999;
-  }
-
-  /* Caixa centralizada */
-  .popup-conteudo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: none;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 90%;
-    max-height: 90%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-
-  .popup-conteudo img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 8px;
-  }
-
-  .fechar {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-  }
-
-  .fechar:hover {
-    color: red;
-  }
-
-
-
-  .bg {
-    background-image: url('./img/computador.png');
-    background-size: cover;
-    width: 1500px;
-    height: 800px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-
-
-  }
-
-  .codigo {
-    background-image: url('./img/codigo.png');
-    background-size: cover;
-    /* Faz a imagem ocupar a tela inteira */
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 280px;
-    height: 60px;
-    transition: transform 0.3s ease;
-  }
-
-  .codigo {
-    top: 30%;
-    left: 52%;
-  }
-
-
-
-
-
-
-  .form1 {
-    padding: 20px 30px;
-    margin-top: 260px;
-    text-align: center;
-    margin-left: 50px;
-  }
-
-  input[type="text"] {
-    padding: 8px;
-    border: 1px solid #cccccc;
-    border-radius: 6px;
-    margin: 10px 0;
-    width: 200px;
-  }
-
-  .enviar {
-    padding: 40px 110px;
-    border: none;
-    border-radius: 6px;
-    opacity: 0%;
-    background: none cursor: pointer;
-    margin-top: 80px;
-
-  }
-
-
-
-
-
-
-
-  #btn-proxima-fase {
-    margin: 20px auto;
-    display: none;
-    /* inicial escondido */
-    background: #ffffffff;
-    color: black;
-    padding: 12px 24px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  #btn-proxima-fase.mostrar {
-    display: block;
-    opacity: 1;
-  }
-</style>
