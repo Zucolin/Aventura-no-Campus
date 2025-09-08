@@ -31,9 +31,19 @@ $_SESSION['passou_biblioteca'] = true;
 </form>
 
 
+<h1 id="local" style=" 
+    margin-top: 300px;
+    left: 37%;
+      font-size: 4.5rem;
+      color: #ffffffff;
+      font-family: Arial, sans-serif;
+       position: fixed;
+       z-index: 4000;
+       text-shadow: 1px 5px 20px #000000ff;
+       display: none;">BIBLIOTECA</h1>
+
+
 <audio id="som-fundo" src="sound/CON" loop autoplay></audio>
-
-
 
 
 <div class="modmenu">
@@ -148,6 +158,20 @@ const msg4 = document.getElementById('caixa-mensagem4');
 const msg5 = document.getElementById('caixa-mensagem5');
 const msg6 = document.getElementById('caixa-mensagem6');
 const vlt = document.getElementById('voltar');
+const local = document.getElementById('local');
+
+        function mostrarMensagens5() {
+
+ local.style.display = "block"; // mostra o local
+    setTimeout(() => {
+       local.style.display = "none";
+    
+    }, 5000);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    mostrarMensagens5(); // chama sua função sem precisar clicar
+});
+
 
 btnLivro.addEventListener('click', () => {
     // Mostra a msg7 primeiro

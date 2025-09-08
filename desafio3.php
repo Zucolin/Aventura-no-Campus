@@ -215,6 +215,18 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
 <body>
 
 
+<h1 id="local" style=" 
+    margin-top: 300px;
+    left: 41%;
+      font-size: 4.5rem;
+      color: #ffffffff;
+      font-family: Arial, sans-serif;
+       position: fixed;
+       z-index: 4000;
+       text-shadow: 1px 5px 20px #000000ff;
+       display: none;">LIE</h1>
+
+
   <div style="background:none; color: white; width:100px; height:100px; border-radius:8px; 
             position:absolute; top:85%; left:50.4%; transform:translate(-50%,-50%);  z-index:2001;">
     <p><STRONG>INVENTARIO</STRONG></p>
@@ -340,7 +352,20 @@ if (!isset($_SESSION['permitido6']) || $_SESSION['permitido6'] !== true) {
     const msg8 = document.getElementById('caixa-mensagem8');
     const bg = document.querySelector('.bg');
     const btnProxima = document.getElementById('btn-proxima-fase');
+    const local = document.getElementById('local');
 
+
+function mostrarMensagens5() {
+
+ local.style.display = "block"; // mostra o local
+    setTimeout(() => {
+       local.style.display = "none";
+    
+    }, 5000);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    mostrarMensagens5(); // chama sua função sem precisar clicar
+});
 
 
     btnLivro.addEventListener("click", () => {

@@ -112,7 +112,6 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
         background: none
         cursor: pointer;
         margin-top: 80px;
-
     }
     .btn-fechar {
         position: absolute;
@@ -158,7 +157,7 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
         height: 100vh;
         background: black;
         mix-blend-mode: screen;
-        z-index: 9999;
+        z-index: 999;
         pointer-events: none;
         overflow: hidden;
     }
@@ -170,18 +169,18 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
         height: 100%;
         background: repeating-linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.52) 20px,
+        rgba(8, 94, 151, 0.4) 20px,
         rgba(255,255,255,0.1) 2px,
         transparent 2px,
         transparent 150px
     );
-        animation: glitchMove 0.2s infinite;
+        animation: glitchMove 0.5s infinite;
     }
     .tv-falha::after {
         background: repeating-linear-gradient(
         to bottom,
-        rgba(5, 76, 217, 0.84) 0px,
-        rgba(0, 255, 255, 0.3) 2px,
+        rgba(206, 6, 189, 0.85) 0px,
+        rgba(0, 255, 255, 0.7) 2px,
         transparent 2px,
         transparent 4px
     );
@@ -246,11 +245,11 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
     margin-top: 300px;
     left: 31%;
       font-size: 4.5rem;
-      color: #ffffffff;
+      color: #c80909ff;
       font-family: Arial, sans-serif;
        position: fixed;
        z-index: 4000;
-       text-shadow: 1px 5px 20px #0a0808ff;
+       text-shadow: 1px 5px 20px #680404ff;
        display: none;">SALA DO CLÁUDIO</h1>
 
 
@@ -448,6 +447,8 @@ function mostrarMensagens2() {
 }
 
 btncofre.addEventListener('click', mostrarMensagens2);
+
+
 
 fecharBtn.addEventListener('click', () => {
   bg.style.display = 'none';

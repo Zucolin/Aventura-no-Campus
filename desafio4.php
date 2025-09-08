@@ -47,7 +47,7 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
         left: 55%;
     }
     .personagem-vitor:hover {
-        transform: translate(-50%, -50%) scale(1.4);
+        transform: translate(-50%, -50%) scale(1.5);
     }
 
 
@@ -162,6 +162,17 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
 </div>
 
 
+<h1 id="local" style=" 
+    margin-top: 300px;
+    left: 41%;
+      font-size: 4.5rem;
+      color: #ffffffff;
+      font-family: Arial, sans-serif;
+       position: fixed;
+       z-index: 4000;
+       text-shadow: 1px 5px 20px #000000ff;
+       display: none;">LOTE 1</h1>
+
 
     <!-- Personagens -->
     <button id="btn-personagem" class="personagem-claudio" style="background: none; border: none; padding: 0;">
@@ -220,8 +231,26 @@ const msg2 = document.getElementById('caixa-mensagem2');
 const msg3 = document.getElementById('caixa-mensagem3');
 const msg4 = document.getElementById('caixa-mensagem4');
 const btnProxima = document.getElementById('btn-ok');
+const local = document.getElementById('local');
+
+
+
+function mostrarMensagens5() {
+
+ local.style.display = "block"; // mostra o local
+    setTimeout(() => {
+       local.style.display = "none";
+    
+    }, 5000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    mostrarMensagens5(); // chama sua função sem precisar clicar
+});
 
 function mostrarMensagens() {
+   
+
     msg1.style.display = "flex";
     msg1.classList.add('mostrar');
 
@@ -249,10 +278,11 @@ function mostrarMensagens() {
                 btnProxima.style.display = "block";
             
                    // Aqui você pode adicionar o que deve acontecer após a última mensagem
-               }, 5000);
-           }, 5000);
-       }, 5000);
-    }
+                     }, 5000);
+                }, 5000);
+          }, 5000);
+  
+} 
 
 btnvitor.addEventListener('click', mostrarMensagens);
 

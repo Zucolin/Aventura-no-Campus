@@ -159,6 +159,19 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
 <body>
    
 
+
+<h1 id="local" style=" 
+    margin-top: 300px;
+    left: 35%;
+      font-size: 4.5rem;
+      color: #ffffffff;
+      font-family: Arial, sans-serif;
+       position: fixed;
+       z-index: 4000;
+       text-shadow: 1px 5px 20px #000000ff;
+       display: none;">LABORATORIO</h1>
+
+
 <div style="background:none; color: red; width:100px; height:100px; border-radius:8px; 
             position:absolute; top:85%; left:47.4%; transform:translate(-50%,-50%);">
 <p><STRONG>INVENTÁRIO/BLOQUEADO</STRONG></p>
@@ -265,6 +278,20 @@ const btnCerto = document.getElementById('btn-certo');
 const btnErrado1 = document.getElementById('btn-errado1');
 const btnErrado2 = document.getElementById('btn-errado2');
 const btnProxima = document.getElementById('btn-proxima-fase');
+const local = document.getElementById('local');
+
+function mostrarMensagens5() {
+
+ local.style.display = "block"; // mostra o local
+    setTimeout(() => {
+       local.style.display = "none";
+    
+    }, 5000);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    mostrarMensagens5(); // chama sua função sem precisar clicar
+});
+
 
 // Função para mostrar mensagens sequenciais
 function mostrarMensagens() {

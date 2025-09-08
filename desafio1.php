@@ -125,6 +125,18 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 <body  >
 
 
+<h1 id="local" style=" 
+    margin-top: 300px;
+    left: 39%;
+      font-size: 4.5rem;
+      color: #ffffffff;
+      font-family: Arial, sans-serif;
+       position: fixed;
+       z-index: 4000;
+       text-shadow: 1px 5px 20px #000000ff;
+       display: none;">QUADRA</h1>
+
+
 <audio id="som-fundo" src="sound/MUSIC.mp3" autoplay loop></audio>
 
 
@@ -205,6 +217,19 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
         const escolhas = document.getElementById('escolhas');
         const btnCerto = document.getElementById('btn-certo');
         const formProxima = document.getElementById('btn-proxima-fase');
+        const local = document.getElementById('local');
+
+        function mostrarMensagens5() {
+
+ local.style.display = "block"; // mostra o local
+    setTimeout(() => {
+       local.style.display = "none";
+    
+    }, 5000);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    mostrarMensagens5(); // chama sua função sem precisar clicar
+});
 
         // Fluxo de mensagens
         function mostrarMensagens() {
