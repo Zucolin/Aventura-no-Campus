@@ -242,7 +242,12 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 <div class="tv-falha"></div>
 
 
-    
+    <h1 style=" margin-top: 20px; distância do topo 
+      font-size: 1.5rem;  tamanho médio 
+      color: #333;
+      font-family: Arial, sans-serif;">SALA DO CLÁUDIO</h1>
+
+
     <!-- Personagens -->
  <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
         <img src="img/protagonista.png" alt="Vitor" style="width:80px;height:auto;display:block;">
@@ -382,6 +387,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // SENHA 
 function mostrarMensagens1() {
+     msg3.style.display = "none"; // esconde a primeira
+    msg1.style.display = "none"; // esconde a primeira
     msg4.style.display = "flex";
     msg4.classList.add('mostrar');
 
@@ -415,6 +422,9 @@ btnsenha.addEventListener('click', mostrarMensagens1);
 
 /*    COFRE   */
 function mostrarMensagens2() {
+      msg4.classList.remove('mostrar');
+        msg4.style.display = "none";
+  msg1.style.display = "none"; // esconde a primeira
     msg3.style.display = "flex"; // mostra a primeira
     msg3.classList.add('mostrar');
 
