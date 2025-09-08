@@ -131,6 +131,12 @@ if (isset($_GET['acao']) && $_GET['acao'] === 'iniciar') {
     $_SESSION['inicio'] = time();
 }
 
+
+
+
+
+
+
 // Se enviou o formulário final usando o botão acesso9
 if (isset($_POST['acesso9']) && isset($_SESSION['inicio'])) {
     $inicio = $_SESSION['inicio'];

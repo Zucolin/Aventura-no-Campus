@@ -52,7 +52,7 @@ if (!isset($_SESSION['permitido7']) || $_SESSION['permitido7'] !== true) {
 
 
 
- .btn-ok {
+    .btn-ok {
         margin: 20px auto;
         display: none; /* inicial escondido */
         background: #ffffffff;
