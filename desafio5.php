@@ -242,10 +242,17 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 <div class="tv-falha"></div>
 
 
-    <h1 style=" margin-top: 20px; distância do topo 
-      font-size: 1.5rem;  tamanho médio 
-      color: #333;
-      font-family: Arial, sans-serif;">SALA DO CLÁUDIO</h1>
+    <h1 id="local" style=" 
+    margin-top: 300px;
+    left: 31%;
+      font-size: 4.5rem;
+      color: #ffffffff;
+      font-family: Arial, sans-serif;
+       position: fixed;
+       z-index: 4000;
+       text-shadow: 1px 5px 20px #0a0808ff;
+       display: none;">SALA DO CLÁUDIO</h1>
+
 
 
     <!-- Personagens -->
@@ -342,7 +349,7 @@ if (!isset($_SESSION['permitido8']) || $_SESSION['permitido8'] !== true) {
 
 
 <script> 
-
+const local = document.getElementById('local');
 const btnsenha = document.getElementById('btn-senha');
 const btncofre = document.getElementById('btn-cofre');
 const btnProxima = document.getElementById('btn-sair');
@@ -364,6 +371,10 @@ const msg8 = document.getElementById('caixa-mensagem5');
 
 /*    CARREGAR PAGINA   */
 function mostrarMensagens() {
+    
+  local.style.display = "block"; // mostra o local
+    setTimeout(() => {
+       local.style.display = "none";
     msg1.style.display = "flex"; // mostra a primeira
     msg1.classList.add('mostrar');
 
@@ -375,9 +386,11 @@ function mostrarMensagens() {
        
       msg2.style.display = "none"; // esconde a primeira
     
-    }, 8000);
+     }, 8000); // 
     
-    }, 15000); // tempo que a primeira fica visível (4 segundos)
+        }, 8000);
+    
+    }, 5000); // tempo que a primeira fica visível (4 segundos)
 }
 
 document.addEventListener('DOMContentLoaded', function() {

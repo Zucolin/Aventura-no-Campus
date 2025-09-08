@@ -161,21 +161,15 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
         <span class="msg-text">RENATO: Bateu o alzhaimer aqui e esqueci as regras de Handbol, passa a visão aí pra nós</span>
     </div>
 
-    <form method="POST" >
-<<<<<<< HEAD
+    <!-- Escolhas -->
     <div id="escolhas" style="display:none; text-align:center; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:101; width:100vw;">
-    
-        <input type="hidden" name="resposta" id="resposta">
-        <input type="hidden" name="tempo" id="tempo">
-
-=======
->>>>>>> 91379554553e0cdb141e3b66b49db8a1a60310d5
+    <form method="POST" >
         <button type="button" class="btn-escolha" id="btn-certo" onclick="enviarResposta('incorreta')">7 jogadores, bola sem pé, 3 segundos, 3 passos, sem drible duplo, área 6m só goleiro, gol cruzar linha, faltas empurrar/segurar/bater, punição amarelo/2min/vermelho, 2 tempos 30min.</button>
         <button type="button" class="btn-escolha" id="btn-errado1" onclick="enviarResposta('correta')"> 7 jogadores, pode usar pé, 3 segundos, 3 passos, drible duplo liberado, área 9m só goleiro, gol conta se tocar na trave, faltas apenas empurrar, punição só cartão amarelo, 2 tempos de 20min.</button>
         <button type="button" class="btn-escolha" id="btn-errado2" onclick="enviarResposta('incorreta')"> 7 jogadores, bola deve ser mordida, 10 segundos, 10 passos, drible com mãos e pés ao mesmo tempo, área 15m qualquer jogador pode entrar, punição inexistente, 2 tempos de 30min.</button>
-    
-     </div>
     </form>
+     </div>
+    
 
     <div id="caixa-mensagem4" class="mensagem-renato" style="display:none;">
         <span class="msg-avatar"></span>

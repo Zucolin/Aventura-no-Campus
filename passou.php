@@ -127,26 +127,4 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok1') {
     header("Location: dialogoclaudio.php");
     exit;
 }
-if (isset($_GET['acao']) && $_GET['acao'] === 'iniciar') {
-    $_SESSION['inicio'] = time();
-}
-
-
-
-
-
-
-
-// Se enviou o formulário final usando o botão acesso9
-if (isset($_POST['acesso9']) && isset($_SESSION['inicio'])) {
-    $inicio = $_SESSION['inicio'];
-    $fim = time();
-    $tempoTotal = $fim - $inicio;
-
-    $minutos = floor($tempoTotal / 60);
-    $segundos = $tempoTotal % 60;
-
-
-    unset($_SESSION['inicio']);
-}
 ?>
