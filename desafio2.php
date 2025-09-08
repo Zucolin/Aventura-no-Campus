@@ -23,6 +23,36 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
 <body>
    
 
+
+
+
+<div style="background:none; color: red; width:100px; height:100px; border-radius:8px; 
+            position:absolute; top:85%; left:50.4%; transform:translate(-50%,-50%);">
+<p><STRONG>BLOQUEADO</STRONG></p>
+</div>
+
+<div style="background:rgba(233, 101, 101, 1); width:100px; height:100px; border-radius:8px; 
+            position:absolute; top:90%; left:50.4%; transform:translate(-50%,-50%);">
+</div>
+
+
+<!-- Botão do livro -->
+  <button id="btn-livro-misterio" class="livro-misterio">
+    <img src="img/livro-qr.png" alt="Livro misterioso" style="width:100%;">
+  </button>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
  <!-- Personagens -->
    
  <button id="btn-livro-celso" class="livro-celso" style="background:none;border:none;padding:0;cursor:pointer;">
@@ -63,11 +93,11 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
 
  <!-- Escolhas -->
     <div id="escolhas" style="display:none; text-align:center; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:101; width:100vw;">
-        <button class="btn-escolha" id="btn-certo">
-        Metano (CH₄) que reage com oxigênio (O₂) liberando energia em forma de calor e luz.
-        </button>
         <button class="btn-escolha" id="btn-errado1">
         Hidroxido de sodio (NaOH) que reage com ácido clorídrico (HCl) liberando água e sal.
+        </button>
+<button class="btn-escolha" id="btn-certo">
+        Metano (CH₄) que reage com oxigênio (O₂) liberando energia em forma de calor e luz.
         </button>
         <button class="btn-escolha" id="btn-errado2">
         Carbonato de cálcio (CaCO₃) que reage com ácido sulfúrico (H₂SO₄) liberando gás carbônico (CO₂) e água.
@@ -78,9 +108,8 @@ if (!isset($_SESSION['permitido5']) || $_SESSION['permitido5'] !== true) {
         <span class="msg-avatar"></span>
         <span class="msg-text">Bom garoto.. Agora vai que Fabio te espera</span>
      
-
-
       <form action="passou.php" method="post">
+        <input type="hidden" name="acao" value="ganhar">
     <button id="btn-proxima-fase" type="submit" name="acesso6" value="ok6" style="display:none;">
         Ok
     </button>
@@ -200,9 +229,6 @@ btnErrado2.addEventListener('click', () => {
 
 
 
-
-
-
         
 
         
@@ -247,15 +273,6 @@ btnErrado2.addEventListener('click', () => {
        
        
        
-       
-
-
-
-
-
-
-
-
 
 
 
@@ -311,7 +328,22 @@ btnErrado2.addEventListener('click', () => {
        
        
        
-       
+        /* Botão do livro */
+    .livro-misterio {
+      position: fixed;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .livro-misterio:hover {
+      transform: translate(-50%, -50%) scale(1.3);
+    }
        
        
        </style>

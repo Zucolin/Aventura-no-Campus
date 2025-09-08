@@ -2,7 +2,42 @@
 session_start();
 
 
+// Inicializa pontuação se não existir
+if (!isset($_SESSION['pontos'])) {
+    $_SESSION['pontos'] = 0; // por exemplo
+}
 
+// Inicializa tempo de início da fase, se ainda não existe
+if (!isset($_SESSION['inicio_fase'])) {
+    $_SESSION['inicio_fase'] = time(); // timestamp atual
+}
+
+// Calcula quantos segundos passaram desde que começou o desafio
+$tempo_passado = time() - $_SESSION['inicio_fase'];
+
+// Subtrai 1 ponto por segundo
+$_SESSION['pontos'] -= $tempo_passado;
+
+// Não deixar negativo
+if ($_SESSION['pontos'] < 0) {
+    $_SESSION['pontos'] = 0;
+}
+
+// Atualiza o timestamp para que não perca pontos duplicados se o jogador clicar de novo
+$_SESSION['inicio_fase'] = time();
+
+if ((isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') ||
+    (isset($_POST['acesso3']) && $_POST['acesso3'] === 'ok3') ||
+    (isset($_POST['acesso4']) && $_POST['acesso4'] === 'ok4') ||
+    (isset($_POST['acesso5']) && $_POST['acesso5'] === 'ok5') ||
+    (isset($_POST['acesso6']) && $_POST['acesso6'] === 'ok6') ||
+    (isset($_POST['acesso7']) && $_POST['acesso7'] === 'ok7') ||
+    (isset($_POST['acesso8']) && $_POST['acesso8'] === 'ok8') ||
+    (isset($_POST['acesso9']) && $_POST['acesso9'] === 'ok9')) {
+ if (isset($_POST['acao']) && $_POST['acao'] === 'ganhar') {
+        $_SESSION['pontos'] += 200; // soma pontos
+    }
+}
 
 
 
@@ -14,6 +49,9 @@ if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
     $_SESSION['permitido4'] = true;
     $_SESSION['permitido5'] = true;
     $_SESSION['permitido6'] = true;
+    $_SESSION['permitido7'] = true;
+    $_SESSION['permitido8'] = true;
+    $_SESSION['permitido9'] = true;
 
     header("Location: dialogoclaudio.php"); // manda direto
     exit;
@@ -25,13 +63,13 @@ if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
 
 
 // Botão acesso1
-if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok') {
+if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok1') {
     $_SESSION['permitido1'] = true;
     header("Location: desafio1.php");
     exit;
 
 // Botão acesso2
-} elseif (isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok1') {
+} elseif (isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') {
     $_SESSION['permitido2'] = true;
     header("Location: meio-1.php");
     exit;
@@ -60,11 +98,44 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok') {
     header("Location: desafio3.php");
     exit;
 
+         //botão acesso7
+} elseif (isset($_POST['acesso7']) && $_POST['acesso7'] === 'ok7') {
+    $_SESSION['permitido7'] = true;
+    header("Location: desafio4.php");
+    exit;
 
+    //botão acesso8
+} elseif (isset($_POST['acesso8']) && $_POST['acesso8'] === 'ok8') {
+    $_SESSION['permitido8'] = true;
+    header("Location: desafio5.php");
+    exit;
 
+     //botão acesso9
+} elseif (isset($_POST['acesso9']) && $_POST['acesso9'] === 'ok9') {
+    $_SESSION['permitido8'] = true;
+    header("Location: final.php");
+    exit;
+
+ 
     // Nenhum botão correto
 } else {
     header("Location: dialogoclaudio.php");
     exit;
+}
+if (isset($_GET['acao']) && $_GET['acao'] === 'iniciar') {
+    $_SESSION['inicio'] = time();
+}
+
+// Se enviou o formulário final usando o botão acesso9
+if (isset($_POST['acesso9']) && isset($_SESSION['inicio'])) {
+    $inicio = $_SESSION['inicio'];
+    $fim = time();
+    $tempoTotal = $fim - $inicio;
+
+    $minutos = floor($tempoTotal / 60);
+    $segundos = $tempoTotal % 60;
+
+
+    unset($_SESSION['inicio']);
 }
 ?>

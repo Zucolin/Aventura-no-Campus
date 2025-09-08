@@ -67,16 +67,17 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
         }
 
         .btn-escolha:nth-child(1) {
-            background: #4b90ff;
+             background: #4b90ff; 
         }
 
         .btn-escolha:nth-child(2) {
-            background: #43c96e;
+             background: #43c96e; 
         }
 
         .btn-escolha:nth-child(3) {
-            background: #f7b32b;
+             background: #f7b32b; 
         }
+
 
         .btn-escolha:hover {
             filter: brightness(1.1);
@@ -91,6 +92,7 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             padding: 12px 24px;
             width: 200px;      
             height: 80px;
+            font-size: 24px;
         }
 
         #btn-proxima-fase.mostrar {
@@ -127,11 +129,14 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
     </div>
 
     <form method="POST" >
+<<<<<<< HEAD
     <div id="escolhas" style="display:none; text-align:center; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:101; width:100vw;">
     
         <input type="hidden" name="resposta" id="resposta">
         <input type="hidden" name="tempo" id="tempo">
 
+=======
+>>>>>>> 91379554553e0cdb141e3b66b49db8a1a60310d5
         <button type="button" class="btn-escolha" id="btn-certo" onclick="enviarResposta('incorreta')">7 jogadores, bola sem pé, 3 segundos, 3 passos, sem drible duplo, área 6m só goleiro, gol cruzar linha, faltas empurrar/segurar/bater, punição amarelo/2min/vermelho, 2 tempos 30min.</button>
         <button type="button" class="btn-escolha" id="btn-errado1" onclick="enviarResposta('correta')"> 7 jogadores, pode usar pé, 3 segundos, 3 passos, drible duplo liberado, área 9m só goleiro, gol conta se tocar na trave, faltas apenas empurrar, punição só cartão amarelo, 2 tempos de 20min.</button>
         <button type="button" class="btn-escolha" id="btn-errado2" onclick="enviarResposta('incorreta')"> 7 jogadores, bola deve ser mordida, 10 segundos, 10 passos, drible com mãos e pés ao mesmo tempo, área 15m qualquer jogador pode entrar, punição inexistente, 2 tempos de 30min.</button>
@@ -148,10 +153,13 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
         <span class="msg-avatar2"></span>
         <span class="msg-text">Fui mais que obrigado né!!!</span>
 
-      <form action="passou.php" method="post">
-    <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok1">
-        Ir para a próxima fase
+     <form action="passou.php" method="post">
+    <input type="hidden" name="acao" value="ganhar">
+    <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok2">
+       OK
     </button>
+</form>
+
 </form>
 
     </div>
@@ -228,22 +236,7 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             }, 5000);
         });
     </script>
-    <?php
-    
-        require_once "pontuacao.php";
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $resposta = $_POST['resposta'];
-        $tempo = intval($_POST['tempo']); 
-
-        if ($resposta === "correta") {
-            $pontosGanhos = max(15 - $tempo, 1); // aqui vale 15 pontos
-            adicionarPontos($pontosGanhos);
-        } else {
-            adicionarPontos(-5); // errou aqui perde -5
-        }
-    }
-    ?>  
+   
 
 
 </body>

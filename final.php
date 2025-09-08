@@ -1,5 +1,5 @@
 <?php
-require_once("pontuação.php")
+require_once("passou.php")
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -147,7 +147,7 @@ require_once("pontuação.php")
       <div class="content">
         <div class="score"><?=$_SESSION['pontos']?></div>
         <p>
-          Sua pontuação foi de <strong><?getPontos()?></strong> pontos. Seu tempo foi de <strong></strong>!
+          Sua pontuação foi de <strong><?=$_SESSION['pontos']?></strong> pontos. Seu tempo foi de <strong><?=$tempo_decorrido?></strong>!
         </p>
       </div>
     </section>
