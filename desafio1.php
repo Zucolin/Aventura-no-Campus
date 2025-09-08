@@ -5,11 +5,9 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
     header("Location: dialogoclaudio.php");
     exit;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +15,8 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
     <link rel="stylesheet" href="Caixa-dialogo.css">
     <link rel="stylesheet" href="responsivo.css">
 
-    <style>
+
+<style>
         body {
             margin: 0;
             padding: 0;
@@ -28,7 +27,6 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             background-repeat: no-repeat;
             image-rendering: pixelated;
         }
-
         .personagem-renato,
         .personagem-vitor {
             position: absolute;
@@ -37,21 +35,20 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             height: auto;
             transition: transform 0.3s ease;
         }
-
         .personagem-renato {
             top: 40%;
             left: 65%;
         }
-
         .personagem-vitor {
             top: 70%;
             left: 75%;
         }
-
-        .personagem-renato:hover,
-        .personagem-vitor:hover {
-            transform: translate(-50%, -50%) scale(1.2);
+        .personagem-renato:hover{
+            transform: translate(-50%, -50%) scale(1.4);
         }
+
+
+
 
         .btn-escolha {
             display: block;
@@ -87,29 +84,65 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
             display: block; /* precisa ser block para o fade funcionar */
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            background: #1eae60;
-            color: #fff;
-            padding: 12px 24px;
-            width: 200px;      
+            background: #fcfcfcff;
+            color: #000000ff;
+            padding: 10px 16px;
+            width: 100px;      
             height: 80px;
             font-size: 24px;
+            border-radius: 12px;
         }
 
         #btn-proxima-fase.mostrar {
             opacity: 1;
         }
-    </style>
-</head>
+   
+   
+   
+   
+        .modmenu {
+            position: fixed;      
+            top: 20px;            
+            left: 20px;           
+            background: rgba(0, 0, 0, 0.41);
+            color: white;          
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 150px;     
+            max-width: 250px;    
+            z-index: 9999;         
+            }
 
-<body class="pagina-desafio1">
+        .modmenu p {
+            margin: 2px 0;     
+        }
+
+</style>
+
+
+</head>
+<body  >
+
+
+<audio id="som-fundo" src="sound/MUSIC.mp3" autoplay loop></audio>
+
+
+<div class="modmenu">
+  <p>⚙️ OBJETIVOS</p>
+  <br>
+  <p><br>Pegar o  Celular</p>
+ <p><br> Ajudar o Renato</p>
+</div>
+
 
     <!-- Personagens -->
     <button id="btn-renato" class="personagem-renato" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/Renato.png" alt="Renato" style="width:70px;height:auto;display:block;">
+        <img src="img/Renato.png" alt="Renato" style="width:90px;height:auto;display:block;">
     </button>
 
     <button id="btn-vitor" class="personagem-vitor" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="img/protagonista.png" alt="Vitor" style="width:60px;height:auto;display:block;">
+        <img src="img/protagonista.png" alt="Vitor" style="width:80px;height:auto;display:block;">
     </button>
 
     <!-- Mensagens -->
@@ -120,12 +153,12 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
     <div id="caixa-mensagem2" class="mensagem-vitor">
         <div class="msg-avatar2"></div>
-        <span class="msg-text">VITOR: Fazendo o corre de hoje né, Coroa me mando pra cá pra ajudar ai</span>
+        <span class="msg-text">VITOR: Fazendo o corre de hoje, Coroa me mando pra cá pra ajudar</span>
     </div>
 
     <div id="caixa-mensagem3" class="mensagem-renato">
         <span class="msg-avatar"></span>
-        <span class="msg-text">RENATO: Bateu o alzhaimer aqui e esqueci as regras de Handbol, passa a visão ai pra nós</span>
+        <span class="msg-text">RENATO: Bateu o alzhaimer aqui e esqueci as regras de Handbol, passa a visão aí pra nós</span>
     </div>
 
     <form method="POST" >
@@ -149,22 +182,20 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
         <span class="msg-text">Valeu, vai ganhar um ponto na media em!!</span>
     </div>
 
-    <div id="caixa-mensagem5" class="mensagem-vitor" style="display:none;">
+<div id="caixa-mensagem5" class="mensagem-vitor" style="display:none;">
         <span class="msg-avatar2"></span>
-        <span class="msg-text">Fui mais que obrigado né!!!</span>
+        <span class="msg-text">Fui mais que obrigado né?!!</span>
 
      <form action="passou.php" method="post">
     <input type="hidden" name="acao" value="ganhar">
-    <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok2">
+   <a href="meio-1.php"> <button id="btn-proxima-fase" type="submit" name="acesso2" value="ok2">
        OK
-    </button>
-</form>
+    </button><a>
+     </form>
 
-</form>
+</div>
 
-    </div>
-
-    <script>
+<script>
         // Personagens
         const btnRenato = document.getElementById('btn-renato');
         const btnVitor = document.getElementById('btn-vitor');
@@ -199,9 +230,7 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
                     msg3.classList.add('mostrar');
 
                     setTimeout(() => {
-                        msg3.classList.remove('mostrar');
-                        msg3.style.display = "none";
-
+                     
                         escolhas.style.display = "block";
                     }, 5000);
 
@@ -212,10 +241,11 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
         // Eventos para clicar nos personagens
         btnRenato.addEventListener('click', mostrarMensagens);
-        btnVitor.addEventListener('click', mostrarMensagens);
 
         // Fluxo da escolha certa
         btnCerto.addEventListener('click', () => {
+            msg3.classList.remove('mostrar');
+            msg3.style.display = "none";
             escolhas.style.display = "none";
 
             msg4.style.display = "flex";
@@ -235,9 +265,9 @@ if (!isset($_SESSION['permitido1']) || $_SESSION['permitido1'] !== true) {
 
             }, 5000);
         });
-    </script>
-   
 
+</script>
+   
 
 </body>
 </html>

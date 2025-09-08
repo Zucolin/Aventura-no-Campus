@@ -32,6 +32,6 @@ img, video {
 
 /* Exemplo de customização por página */
 
-body.pagina-final {
+  body.pagina-final {
   background: #fff3e0;
 }

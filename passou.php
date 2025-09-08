@@ -26,6 +26,11 @@ if ($_SESSION['pontos'] < 0) {
 // Atualiza o timestamp para que não perca pontos duplicados se o jogador clicar de novo
 $_SESSION['inicio_fase'] = time();
 
+
+
+
+
+
 if ((isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') ||
     (isset($_POST['acesso3']) && $_POST['acesso3'] === 'ok3') ||
     (isset($_POST['acesso4']) && $_POST['acesso4'] === 'ok4') ||
@@ -35,9 +40,11 @@ if ((isset($_POST['acesso2']) && $_POST['acesso2'] === 'ok2') ||
     (isset($_POST['acesso8']) && $_POST['acesso8'] === 'ok8') ||
     (isset($_POST['acesso9']) && $_POST['acesso9'] === 'ok9')) {
  if (isset($_POST['acao']) && $_POST['acao'] === 'ganhar') {
-        $_SESSION['pontos'] += 200; // soma pontos
+        $_SESSION['pontos'] += 
+        300; // soma pontos
     }
 }
+
 
 
 
@@ -56,8 +63,6 @@ if (isset($_POST['codigo_secreto']) && $_POST['codigo_secreto'] === 'liberar') {
     header("Location: dialogoclaudio.php"); // manda direto
     exit;
 }
-
-
 
 
 
@@ -113,7 +118,7 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok1') {
      //botão acesso9
 } elseif (isset($_POST['acesso9']) && $_POST['acesso9'] === 'ok9') {
     $_SESSION['permitido8'] = true;
-    header("Location: final.php");
+    header("Location: pontuação.php");
     exit;
 
  
@@ -122,6 +127,7 @@ if (isset($_POST['acesso1']) && $_POST['acesso1'] === 'ok1') {
     header("Location: dialogoclaudio.php");
     exit;
 }
+<<<<<<< HEAD
 if (isset($_GET['acao']) && $_GET['acao'] === 'iniciar') {
     $_SESSION['inicio'] = time();
 }
@@ -138,4 +144,6 @@ if (isset($_POST['acesso9']) && isset($_SESSION['inicio'])) {
 
     unset($_SESSION['inicio']);
 }
+=======
+>>>>>>> b57ed026f52aa1375e137b9e9f9e43e1e0612b8a
 ?>
